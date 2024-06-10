@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/formulario"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Campo de entrada para el nombre -->
+    <EditText
+        android:id="@+id/et_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_edit_text" />
+
+    <!-- Campo de entrada para el color preferido -->
+    <EditText
+        android:id="@+id/et_color_preferido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Color Preferido"
+        android:inputType="text"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_edit_text" />
+
+    <!-- Campo de entrada para la fecha de nacimiento -->
+    <EditText
+        android:id="@+id/et_fecha_nacimiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de Nacimiento"
+        android:inputType="date"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_edit_text" />
+
+    <!-- Campo de entrada para la ciudad favorita -->
+    <EditText
+        android:id="@+id/et_ciudad_favorita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ciudad Favorita"
+        android:inputType="text"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_edit_text" />
+
+    <!-- Campo de entrada para el número favorito -->
+    <EditText
+        android:id="@+id/et_numero_favorito"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número Favorito"
+        android:inputType="number"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_edit_text" />
+
+    <!-- Campo de entrada para la localización actual -->
+    <EditText
+        android:id="@+id/et_localizacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Localización Actual"
+        android:inputType="text"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp"
+        android:enabled="false"
+        android:background="@drawable/rounded_edit_text" />
+
+    <!-- Botón para calcular la localización -->
+    <Button
+        android:id="@+id/btn_calcular_localizacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular Localización"
+        style="@style/CustomButton"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Botón para guardar la información -->
+    <Button
+        android:id="@+id/btn_guardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        style="@style/CustomButton"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
