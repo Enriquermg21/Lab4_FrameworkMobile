@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Lab4_FrameworkMobile</string>
+    <string name="calcular_localizaci_n">Calcular Localización</string>
+    <string name="guardar">Guardar</string>
+    <string name="localizaci_n_actual">Localización Actual</string>
+    <string name="n_mero_favorito">Número Favorito</string>
+    <string name="ciudad_favorita">Ciudad Favorita</string>
+    <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
+    <string name="color_preferido">Color Preferido</string>
+    <string name="nombre">Nombre</string>
+    <string name="mas">Más</string>
 </resources>
