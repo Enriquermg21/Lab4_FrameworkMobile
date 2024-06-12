@@ -21,8 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.navigation.AddUserActivity" />
-        <activity android:name=".ui.navigation.UserDetailActivity" />
+        <activity android:name=".ui.fragments.AddUserFragment" />
+        <activity android:name=".ui.fragments.UserDetailFragment" />
     </application>
 
 </manifest>

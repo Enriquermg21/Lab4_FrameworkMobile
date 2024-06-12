@@ -35,6 +35,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        //noinspection DataBindingWithoutKapt
         dataBinding = true
     }
 }
@@ -46,19 +47,15 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    //Retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
     //Coroutines
     implementation(libs.kotlinx.coroutines.android)
-    //Glide
-    implementation(libs.glide)
-    annotationProcessor(libs.compiler)
-    //ViewModel
     //ViewModel
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.activity.ktx)
+    //Navigation
+    implementation(libs.bundles.navigation)
+    //Hilt
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

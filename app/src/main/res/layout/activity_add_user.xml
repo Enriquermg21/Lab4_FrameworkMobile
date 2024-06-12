@@ -4,47 +4,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.navigation.AddUserActivity">
+    tools:context=".ui.fragments.AddUserFragment">
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name" />
+        android:hint="@string/name" />
 
     <EditText
         android:id="@+id/editTextColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Favorite Color" />
+        android:hint="@string/favorite_color" />
 
     <EditText
         android:id="@+id/editTextBirthday"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Birthday" />
+        android:hint="@string/birthday"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/editTextCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Favorite City" />
+        android:hint="@string/favorite_city"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/editTextFavoriteNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Favorite Number" />
+        android:hint="@string/favorite_number" />
 
     <Button
         android:id="@+id/buttonGetLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Location" />
+        android:text="@string/get_location" />
 
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save" />
+        android:text="@string/save" />
 </LinearLayout>
