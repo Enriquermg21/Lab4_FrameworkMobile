@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
     app:startDestination="@id/dashboardFragment">
 
-    <fragment
-        android:id="@+id/addUserActivity2"
-        android:name="com.example.lab4_frameworkmobile.ui.fragments.AddUserFragment"
-        android:label="activity_add_user"
-        tools:layout="@layout/activity_add_user" />
-    <fragment
-        android:id="@+id/userDetailActivity2"
-        android:name="com.example.lab4_frameworkmobile.ui.fragments.UserDetailFragment"
-        android:label="activity_user_detail"
-        tools:layout="@layout/activity_user_detail" />
-    <fragment
-        android:id="@+id/userChoosedFragment2"
-        android:name="com.example.lab4_frameworkmobile.ui.fragments.userChoosedFragment"
-        android:label="fragment_user_choosed"
-        tools:layout="@layout/fragment_user_choosed" />
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.example.lab4_frameworkmobile.ui.dashboard.DashboardFragment"

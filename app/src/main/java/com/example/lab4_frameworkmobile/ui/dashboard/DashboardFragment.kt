@@ -6,12 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.lab4_frameworkmobile.R
-import com.example.lab4_frameworkmobile.databinding.ListadoMainBinding
+import com.example.lab4_frameworkmobile.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
-    private lateinit var binding: ListadoMainBinding
+    private lateinit var binding: FragmentDashboardBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflarVista(inflater)
+    }
     private fun inflarVista(layoutInflater: LayoutInflater): View {
-        binding = ListadoMainBinding.inflate(layoutInflater)
+        binding = FragmentDashboardBinding.inflate(layoutInflater)
         return binding.root
     }
 

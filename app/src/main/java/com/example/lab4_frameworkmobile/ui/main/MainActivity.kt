@@ -38,7 +38,10 @@ class MainActivity : AppCompatActivity() {
     private fun configNavigation() {
         // Encuentra el fragmento por ID
         val fragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
-        Log.d("MainActivity", "Fragment encontrado: $fragment")
+        Log.d(
+            "MainActivity",
+            "Fragment encontrado: ${supportFragmentManager.findFragmentById(R.id.nav_host_fragment)}"
+        )
 
         // Intenta convertir el fragmento a NavHostFragment
         val navHostFragment = fragment as? NavHostFragment
