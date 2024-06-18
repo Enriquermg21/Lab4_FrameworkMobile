@@ -5,8 +5,7 @@
     android:id="@+id/clToolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/black0B031E"
-    tools:background="@color/blue235172">
+    android:background="@color/blue235172">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbToolbar"

@@ -9,6 +9,19 @@
         android:id="@+id/contactsFragment"
         android:name="com.example.lab4_frameworkmobile.ui.contacts.ContactsFragment"
         android:label="DashboardFragment"
-        tools:layout="@layout/fragment_contacts"></fragment>
+        tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/action_contactsFragment_to_formularioContacts"
+            app:destination="@id/formularioContacts" />
+    </fragment>
+    <fragment
+        android:id="@+id/formularioContacts"
+        android:name="com.example.lab4_frameworkmobile.ui.form.FormContacts"
+        android:label="fragment_formulario_contacts"
+        tools:layout="@layout/fragment_formulario_contacts">
+        <action
+            android:id="@+id/action_formularioContacts_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
+    </fragment>
 
 </navigation>
