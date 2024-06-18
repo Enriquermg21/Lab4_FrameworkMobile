@@ -1,8 +1,13 @@
+package com.example.lab4_frameworkmobile.ui.main
 
-import androidx.lifecycle.ViewModel
-import com.example.lab4_frameworkmobile.data.domain.model.user.User
+import androidx.lifecycle.SavedStateHandle
+import com.example.lab4_frameworkmobile.ui.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MainViewModel : ViewModel() {
-    fun addUser(user: User) {
-    }
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    savedStateHandle: SavedStateHandle,
+) : BaseViewModel(savedStateHandle) {
+
 }

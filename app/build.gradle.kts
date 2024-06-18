@@ -1,7 +1,21 @@
+
+
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    kotlin("kapt")
+    alias(libs.plugins.pluginAndroidApplication)
+    alias(libs.plugins.pluginJetbrainsKotlinAndroid)
+    alias(libs.plugins.pluginDaggerHilt)
+    alias(libs.plugins.pluginDevKsp)
+    alias(libs.plugins.pluginUndercouchDownload)
+    alias(libs.plugins.pluginSerialization)
+    alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.pluginNavigationSafeArgs)
+    alias(libs.plugins.pluginSecretGradle)
 }
+
+val versionMajor = 0
+val versionSprint = 13
+val versionSprintRevision = 7
 
 android {
     namespace = "com.example.lab4_frameworkmobile"
@@ -18,46 +32,72 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
+            isDebuggable = true
             isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
+                "proguard-disable-log.pro"
+            )
+            enableUnitTestCoverage = true
+            enableAndroidTestCoverage = true
+
+        }
+
+        release {
+            isDebuggable = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+                "proguard-disable-log.pro"
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    packaging {
+        resources.excludes.add("META-INF/LICENSE.md")
+        resources.excludes.add("META-INF/LICENSE-notice.md")
+    }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         viewBinding = true
-        //noinspection DataBindingWithoutKapt
-        dataBinding = true
+        buildConfig = true
     }
 }
 
 dependencies {
 
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-    //Coroutines
-    implementation(libs.kotlinx.coroutines.android)
-    //ViewModel
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.activity.ktx)
+    //Libs
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar", "*.jar"))))
+    //Android
+    implementation(libs.bundles.android)
     //Navigation
     implementation(libs.bundles.navigation)
+    androidTestImplementation(libs.androidxNavigationTesting)
     //Hilt
+    implementation(libs.daggerHilt)
+    kapt(libs.daggerHiltCompiler)
+    //Lifecycle
+    implementation(libs.bundles.lifecycle)
+    //Coroutines
+    implementation(libs.bundles.coroutines)
+    //Biometric
+    implementation(libs.androidxBiometric)
+}
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+kapt {
+    correctErrorTypes = true
 }

@@ -1,45 +1,90 @@
 [versions]
-activityKtx = "1.9.0"
-agp = "8.3.2"
-kotlin = "1.9.23"
+#Plugins
+pluginAndroidApplication = "8.3.2"
+pluginKotlin = "1.9.23"
+pluginDaggerHilt = "2.48"
+pluginDevKsp = "1.9.23-1.0.20"
+pluginUndercouchDownload = "5.5.0"
+pluginNavigationSafeArgs = "2.7.7"
+pluginSerialization = "1.9.23"
+
+#Android
 coreKtx = "1.13.1"
-junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-appcompat = "1.7.0"
-kotlinxCoroutinesAndroid = "1.7.3"
-lifecycleViewmodelKtx = "2.8.0"
+coreSplash = "1.0.1"
+appCompat = "1.6.1"
+constraitLayout = "2.1.4"
+swipeRefreshLayout = "1.1.0"
 material = "1.12.0"
-activity = "1.8.0"
-constraintlayout = "2.1.4"
+playServicesMaps = "18.2.0"
+
 #Navigation
 androidxNavigation = "2.7.7"
 
+#Hilt
+hilt = "2.48.1"
+
+#Lifecycle
+lifecycle = "2.7.0"
+
+#Coroutines
+coroutines = "1.8.0"
+
+#Biometric
+biometric = "1.1.0"
+
+#SecretsGradlePlugin
+secretsGradlePlugin = "2.0.1"
+securityCryptoKtx = "1.0.0"
+
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
-androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleViewmodelKtx" }
-androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
-androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+#Android
+androidxCoreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidxCoreSplash = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplash" }
+androidxAppcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
+androidxConstraitLayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraitLayout" }
+androidxSwipeRefresh = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipeRefreshLayout" }
+androidMaterial = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidPlayServicesMaps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 
 #Navigation
 androidxNavigationFragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidxNavigation" }
 androidxNavigationUI = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidxNavigation" }
 androidxNavigationDynamicFragment = { group = "androidx.navigation", name = "navigation-dynamic-features-fragment", version.ref = "androidxNavigation" }
 androidxNavigationCompose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
+androidxNavigationTesting = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxNavigation" }
+
+#Hilt
+daggerHilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+daggerHiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+#Lifecycle
+androidxLivecycleLivedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidxLivecycleRuntime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidxLivecycleViewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+
+#Coroutines
+coroutinesCore = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutinesAndroid = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+
+#Biometric
+androidxBiometric = { group = "androidx.biometric", name = "biometric", version.ref = "biometric" }
+
 
 [bundles]
+android = ["androidxCoreKtx", "androidxCoreSplash", "androidxAppcompat", "androidxConstraitLayout", "androidxSwipeRefresh", "androidMaterial", "androidPlayServicesMaps"]
 navigation = ["androidxNavigationFragment", "androidxNavigationUI", "androidxNavigationDynamicFragment", "androidxNavigationCompose"]
+lifecycle = ["androidxLivecycleLivedata", "androidxLivecycleRuntime", "androidxLivecycleViewmodel"]
+coroutines = ["coroutinesCore", "coroutinesAndroid"]
+
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-
-
+pluginAndroidApplication = { id = "com.android.application", version.ref = "pluginAndroidApplication" }
+pluginJetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "pluginKotlin" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "pluginKotlin" }
+pluginDaggerHilt = { id = "com.google.dagger.hilt.android", version.ref = "pluginDaggerHilt" }
+pluginDevKsp = { id = "com.google.devtools.ksp", version.ref = "pluginDevKsp" }
+pluginUndercouchDownload = { id = "de.undercouch.download", version.ref = "pluginUndercouchDownload" }
+pluginNavigationSafeArgs = { id = "androidx.navigation.safeargs.kotlin", version.ref = "pluginNavigationSafeArgs" }
+pluginSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "pluginSerialization" }
+pluginSecretGradle = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsGradlePlugin" }
