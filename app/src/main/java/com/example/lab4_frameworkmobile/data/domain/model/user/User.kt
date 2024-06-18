@@ -6,6 +6,6 @@ data class User(
     val color: String?,
     val dateOfBirth: String?,
     val favoriteCity: String?,
-    val favoriteNumber: Int?,
+    val favoriteNumber: String?,
     val currentLocation: String?
 ) : Serializable
