@@ -4,20 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.lab4_frameworkmobile.data.domain.usecases.GetUserUseCase
 import com.example.lab4_frameworkmobile.databinding.FragmentContactsBinding
 import com.example.lab4_frameworkmobile.ui.base.BaseFragment
 import com.example.lab4_frameworkmobile.ui.contacts.adapter.ContactsAdapter
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-class ContactsFragment @Inject constructor(private var getUserUseCase: GetUserUseCase) :
-    BaseFragment<FragmentContactsBinding>() {
+@AndroidEntryPoint
+class ContactsFragment : BaseFragment<FragmentContactsBinding>() {
     private val contactsAdapter = ContactsAdapter()
-
+    private val contactsFragmentViewModel: ContactsFragmentViewModel by viewModels()
     override fun inflateBinding() {
         binding = FragmentContactsBinding.inflate(layoutInflater)
     }
@@ -28,11 +28,7 @@ class ContactsFragment @Inject constructor(private var getUserUseCase: GetUserUs
         savedInstanceState: Bundle?
     ) {
         configRecycledView()
-        binding?.fab?.setOnClickListener() {
-            findNavController().navigate(
-                ContactsFragmentDirections.actionContactsFragmentToFormularioContacts()
-            )
-        }
+        configNavController()
     }
 
     private fun configRecycledView() {
@@ -43,11 +39,19 @@ class ContactsFragment @Inject constructor(private var getUserUseCase: GetUserUs
         }
         lifecycleScope.launch {
             try {
-                val users = getUserUseCase()
+                val users = contactsFragmentViewModel.getUser()
                 contactsAdapter.submitList(users)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+        }
+    }
+
+    private fun configNavController() {
+        binding?.fab?.setOnClickListener() {
+            findNavController().navigate(
+                ContactsFragmentDirections.actionContactsFragmentToFormularioContacts()
+            )
         }
     }
 

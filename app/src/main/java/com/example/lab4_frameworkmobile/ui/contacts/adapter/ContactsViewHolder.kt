@@ -9,7 +9,6 @@ class ContactsViewHolder(private val binding: FragmentContactsItemBinding) :
     fun onBind(user: User) {
         binding.apply {
             itemName.text = user.name
-            itemDateOfBirth.text = user.dateOfBirth
         }
     }
 }

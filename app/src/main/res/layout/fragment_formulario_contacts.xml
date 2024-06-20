@@ -101,11 +101,30 @@
             android:paddingTop="8dp"
             android:paddingBottom="4dp" />
 
-        <EditText
-            android:id="@+id/etLocalizacionActual"
+        <TextView
+            android:id="@+id/etLatitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Introduce tu localización actual" />
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:id="@+id/etLongitud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <Button
+            android:id="@+id/getLocationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Obtener Localización" />
+
 
         <!-- Botón para enviar el formulario -->
         <Button

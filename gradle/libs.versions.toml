@@ -1,5 +1,6 @@
 [versions]
 #Plugins
+playServicesLocation = "21.3.0"
 pluginAndroidApplication = "8.3.2"
 pluginKotlin = "1.9.23"
 pluginDaggerHilt = "2.48"
@@ -74,6 +75,7 @@ coroutinesAndroid = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutine
 androidxBiometric = { group = "androidx.biometric", name = "biometric", version.ref = "biometric" }
 
 #Room
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 room-compiler-v261 = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }

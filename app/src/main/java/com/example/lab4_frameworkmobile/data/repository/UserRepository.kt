@@ -4,8 +4,10 @@ import com.example.lab4_frameworkmobile.data.database.dao.UserDao
 import com.example.lab4_frameworkmobile.data.database.entities.UserEntity
 import com.example.lab4_frameworkmobile.data.domain.model.user.User
 import com.example.lab4_frameworkmobile.data.domain.model.user.toDomain
+import dagger.hilt.android.scopes.ActivityRetainedScoped
 import javax.inject.Inject
 
+@ActivityRetainedScoped
 class UserRepository @Inject constructor(private val userDao: UserDao) {
 
     suspend fun getAllUsersFromDatabase(): List<User> {

@@ -99,6 +99,8 @@ dependencies {
     // Room
     implementation(libs.room.ktx.v261)
     ksp(libs.room.compiler.v261)
+    //Google
+    implementation(libs.play.services.location)
 }
 
 kapt {

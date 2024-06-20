@@ -3,8 +3,6 @@ package com.example.lab4_frameworkmobile.hilt
 import android.content.Context
 import androidx.room.Room
 import com.example.lab4_frameworkmobile.data.database.UserDatabase
-import com.example.lab4_frameworkmobile.data.domain.usecases.InsertUserUseCase
-import com.example.lab4_frameworkmobile.data.repository.UserRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,10 +23,4 @@ object RoomModule {
     @Singleton
     @Provides
     fun provideQuoteDao(database: UserDatabase) = database.quoteDao()
-
-    @Singleton
-    @Provides
-    fun provideInsertUserUseCase(userRepository: UserRepository): InsertUserUseCase {
-        return InsertUserUseCase(userRepository)
-    }
 }
