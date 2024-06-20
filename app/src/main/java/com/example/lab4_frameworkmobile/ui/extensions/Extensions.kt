@@ -9,9 +9,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
-
-//https://developer.android.com/reference/android/util/Log.html
-//is thrown if the tag.length() > 23 for Nougat (7.0) and prior releases (API <= 25), there is no tag limit of concern after this API level.
 val Any.TAG: String
     get() {
         val tagSimpleName = javaClass.simpleName

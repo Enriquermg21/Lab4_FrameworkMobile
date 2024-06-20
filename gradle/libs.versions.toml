@@ -13,6 +13,9 @@ coreKtx = "1.13.1"
 coreSplash = "1.0.1"
 appCompat = "1.6.1"
 constraitLayout = "2.1.4"
+roomCompiler = "2.6.1"
+roomKtx = "2.6.1"
+roomRuntime = "room_version"
 swipeRefreshLayout = "1.1.0"
 material = "1.12.0"
 playServicesMaps = "18.2.0"
@@ -34,7 +37,7 @@ biometric = "1.1.0"
 
 #SecretsGradlePlugin
 secretsGradlePlugin = "2.0.1"
-securityCryptoKtx = "1.0.0"
+roomCommon = "2.6.1"
 
 [libraries]
 #Android
@@ -69,6 +72,14 @@ coroutinesAndroid = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutine
 
 #Biometric
 androidxBiometric = { group = "androidx.biometric", name = "biometric", version.ref = "biometric" }
+
+#Room
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+room-compiler-v261 = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
+room-ktx-v261 = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+room-common = { group = "androidx.room", name = "room-common", version.ref = "roomCommon" }
 
 
 [bundles]

@@ -4,22 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.lab4_frameworkmobile.data.domain.model.user.User
+import com.example.lab4_frameworkmobile.data.domain.usecases.GetUserUseCase
 import com.example.lab4_frameworkmobile.databinding.FragmentContactsBinding
 import com.example.lab4_frameworkmobile.ui.base.BaseFragment
 import com.example.lab4_frameworkmobile.ui.contacts.adapter.ContactsAdapter
-import com.example.lab4_frameworkmobile.ui.singleton.Singleton.userList
-import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class ContactsFragment : BaseFragment<FragmentContactsBinding>() {
+class ContactsFragment @Inject constructor(private var getUserUseCase: GetUserUseCase) :
+    BaseFragment<FragmentContactsBinding>() {
+    private val contactsAdapter = ContactsAdapter()
 
-    private val contactsfragmentViewModel: ContactsFragmentViewModel by viewModels()
-    val contactsAdapter = ContactsAdapter()
     override fun inflateBinding() {
         binding = FragmentContactsBinding.inflate(layoutInflater)
     }
@@ -43,21 +41,17 @@ class ContactsFragment : BaseFragment<FragmentContactsBinding>() {
             layoutManager = LinearLayoutManager(context)
             adapter = contactsAdapter
         }
-        updateList(userList)
-    }
-
-    private fun updateList(userList: MutableList<User>) {
-        contactsAdapter.submitList(userList)
-    }
-
-    override fun observeViewModel() {
         lifecycleScope.launch {
-            contactsfragmentViewModel.listLoad.collectLatest {
-                configRecycledView()
+            try {
+                val users = getUserUseCase()
+                contactsAdapter.submitList(users)
+            } catch (e: Exception) {
+                e.printStackTrace()
             }
         }
     }
 
+    override fun observeViewModel() = Unit
     override fun viewCreatedAfterSetupObserverViewModel(view: View, savedInstanceState: Bundle?) =
         Unit
 

@@ -96,6 +96,9 @@ dependencies {
     implementation(libs.bundles.coroutines)
     //Biometric
     implementation(libs.androidxBiometric)
+    // Room
+    implementation(libs.room.ktx.v261)
+    ksp(libs.room.compiler.v261)
 }
 
 kapt {
