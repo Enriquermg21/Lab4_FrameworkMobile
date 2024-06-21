@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ContactsFragment : BaseFragment<FragmentContactsBinding>() {
-    private val contactsAdapter = ContactsAdapter()
+    private val contactsAdapter = ContactsAdapter(users = emptyList())
     private val contactsFragmentViewModel: ContactsFragmentViewModel by viewModels()
     override fun inflateBinding() {
         binding = FragmentContactsBinding.inflate(layoutInflater)
@@ -48,7 +48,7 @@ class ContactsFragment : BaseFragment<FragmentContactsBinding>() {
     }
 
     private fun configNavController() {
-        binding?.fab?.setOnClickListener() {
+        binding?.fab?.setOnClickListener {
             findNavController().navigate(
                 ContactsFragmentDirections.actionContactsFragmentToFormularioContacts()
             )

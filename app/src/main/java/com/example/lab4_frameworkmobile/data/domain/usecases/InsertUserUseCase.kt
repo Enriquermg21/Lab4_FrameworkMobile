@@ -16,7 +16,7 @@ class InsertUserUseCase @Inject constructor(private val repository: UserReposito
         } catch (e: Exception) {
             Log.e(TAG, "Error inserting user: $user")
             Log.e(TAG, "Exception message: ${e.message}")
-            throw e // Re-throw the exception to be caught by the calling method if needed
+            throw e
         }
     }
 }

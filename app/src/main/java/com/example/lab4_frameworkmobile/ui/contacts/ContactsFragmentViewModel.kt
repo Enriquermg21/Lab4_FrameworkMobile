@@ -11,6 +11,5 @@ class ContactsFragmentViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val getUserUseCase: GetUserUseCase
 ) : BaseViewModel(savedStateHandle) {
-
     suspend fun getUser() = getUserUseCase()
 }

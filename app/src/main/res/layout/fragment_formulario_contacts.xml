@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -9,100 +10,112 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Nombre -->
+        <!-- Name -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre"
+            android:text="@string/user_detail_name"
             android:textSize="16sp"
             android:textStyle="bold"
             android:paddingTop="8dp"
             android:paddingBottom="4dp" />
 
         <EditText
-            android:id="@+id/etNombre"
+            android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Introduce tu nombre" />
-
-        <!-- Color preferido -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Color preferido"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
-
-        <EditText
-            android:id="@+id/etColorPreferido"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduce tu color preferido" />
+            android:hint="@string/user_detail_name_hint"
+            android:autofillHints=""
+            android:inputType=""
+            tools:ignore="TextFields" />
 
         <!-- Fecha de nacimiento -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fecha de nacimiento"
+            android:text="@string/user_detail_dateOfBirth"
             android:textSize="16sp"
             android:textStyle="bold"
             android:paddingTop="8dp"
             android:paddingBottom="4dp" />
 
         <EditText
-            android:id="@+id/etFechaNacimiento"
+            android:id="@+id/etBirthDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Introduce tu fecha de nacimiento"
-            android:inputType="date" />
+            android:hint="@string/user_detail_dateOfBirth_hint"
+            android:inputType="date"
+            android:autofillHints="" />
+
+        <!-- Color preferido -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/user_detail_favorite_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/etFavouriteColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_detail_favorite_color_hint"
+            android:autofillHints=""
+            android:inputType=""
+            tools:ignore="TextFields" />
+
 
         <!-- Ciudad favorita -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ciudad favorita"
+            android:text="@string/user_detail_favorite_city"
             android:textSize="16sp"
             android:textStyle="bold"
             android:paddingTop="8dp"
             android:paddingBottom="4dp" />
 
         <EditText
-            android:id="@+id/etCiudadFavorita"
+            android:id="@+id/etFavoriteCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Introduce tu ciudad favorita" />
+            android:hint="@string/user_detail_favorite_city_hint"
+            android:autofillHints=""
+            android:inputType=""
+            tools:ignore="TextFields" />
 
         <!-- Número favorito -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Número favorito"
+            android:text="@string/user_detail_favorite_number"
             android:textSize="16sp"
             android:textStyle="bold"
             android:paddingTop="8dp"
             android:paddingBottom="4dp" />
 
         <EditText
-            android:id="@+id/etNumeroFavorito"
+            android:id="@+id/etFavoriteNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Introduce tu número favorito"
-            android:inputType="number" />
+            android:hint="@string/user_detail_favorite_number_hint"
+            android:inputType="number"
+            android:autofillHints="" />
 
         <!-- Localización actual -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Localización actual"
+            android:text="@string/actual_location"
             android:textSize="16sp"
             android:textStyle="bold"
             android:paddingTop="8dp"
             android:paddingBottom="4dp" />
 
         <TextView
-            android:id="@+id/etLatitud"
+            android:id="@+id/etLatitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -111,7 +124,7 @@
             android:paddingBottom="4dp" />
 
         <TextView
-            android:id="@+id/etLongitud"
+            android:id="@+id/etLongitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -120,10 +133,10 @@
             android:paddingBottom="4dp" />
 
         <Button
-            android:id="@+id/getLocationButton"
+            android:id="@+id/btGetLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Obtener Localización" />
+            android:text="@string/getActualLocationButton" />
 
 
         <!-- Botón para enviar el formulario -->
@@ -131,7 +144,7 @@
             android:id="@+id/btnEnviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enviar"
+            android:text="@string/addForm"
             android:layout_marginTop="16dp" />
     </LinearLayout>
 </ScrollView>

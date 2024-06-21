@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
@@ -36,34 +37,38 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
     ) {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
-        binding?.getLocationButton?.setOnClickListener {
+        binding?.btGetLocation?.setOnClickListener {
             getLocation()
         }
 
         binding?.btnEnviar?.setOnClickListener {
-            val nombre = binding?.etNombre?.text?.toString() ?: ""
-            val ciudadFavorita = binding?.etCiudadFavorita?.text?.toString() ?: ""
-            val fechaNacimiento = binding?.etFechaNacimiento?.text?.toString() ?: ""
-            val numeroFavorito = binding?.etNumeroFavorito?.text?.toString() ?: ""
-            val colorPreferido = binding?.etColorPreferido?.text?.toString() ?: ""
-            val latitud = binding?.etLatitud?.text?.toString() ?: ""
-            val longitud = binding?.etLongitud?.text?.toString() ?: ""
+            val name = binding?.etName?.text?.toString() ?: ""
+            val dateOfBirth = binding?.etBirthDate?.text?.toString() ?: ""
+            val color = binding?.etFavouriteColor?.text?.toString() ?: ""
+            val favoriteCity = binding?.etFavoriteCity?.text?.toString() ?: ""
+            val favoriteNumber = binding?.etFavoriteNumber?.text?.toString() ?: ""
+            val latitude = binding?.etLatitude?.text?.toString() ?: ""
+            val longitude = binding?.etLongitude?.text?.toString() ?: ""
 
-            if (nombre.isEmpty() || ciudadFavorita.isEmpty() || fechaNacimiento.isEmpty() ||
-                numeroFavorito.isEmpty() || colorPreferido.isEmpty() || latitud.isEmpty() || longitud.isEmpty()
+            if (name.isEmpty() || dateOfBirth.isEmpty() || color.isEmpty() ||
+                favoriteCity.isEmpty() || favoriteNumber.isEmpty() || latitude.isEmpty() || longitude.isEmpty()
             ) {
-                Log.e(TAG, "Todos los campos deben ser completados")
+                Toast.makeText(
+                    requireContext(),
+                    "Tienes que completar todos los campos",
+                    Toast.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
 
             val user = UserEntity(
                 0,
-                nombre,
-                ciudadFavorita,
-                fechaNacimiento,
-                numeroFavorito,
-                colorPreferido,
-                "$latitud, $longitud"
+                name,
+                dateOfBirth,
+                color,
+                favoriteCity,
+                favoriteNumber,
+                "$latitude, $longitude"
             )
             insertUser(user)
         }
@@ -84,8 +89,8 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
             fusedLocationClient.lastLocation
                 .addOnSuccessListener { location: Location? ->
                     location?.let {
-                        binding?.etLatitud?.setText(it.latitude.toString())
-                        binding?.etLongitud?.setText(it.longitude.toString())
+                        binding?.etLatitude?.text = it.latitude.toString()
+                        binding?.etLongitude?.setText(it.longitude.toString())
                     } ?: run {
                         Log.e(TAG, "No se pudo obtener la ubicación")
                     }

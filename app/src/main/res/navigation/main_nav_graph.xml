@@ -24,7 +24,9 @@
         tools:layout="@layout/fragment_formulario_contacts">
         <action
             android:id="@+id/action_formularioContacts_to_contactsFragment"
-            app:destination="@id/contactsFragment" />
+            app:destination="@id/contactsFragment"
+            app:popUpTo="@id/contactsFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/userData"
@@ -34,6 +36,9 @@
         <action
             android:id="@+id/action_userData_to_contactsFragment"
             app:destination="@id/contactsFragment" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
     </fragment>
 
 </navigation>
