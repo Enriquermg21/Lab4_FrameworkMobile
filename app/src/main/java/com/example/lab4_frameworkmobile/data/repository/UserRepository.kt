@@ -30,4 +30,8 @@ class UserRepository @Inject constructor(private val userDao: UserDao) {
     suspend fun getUserByName(userName: String): UserEntity {
         return userDao.getUserByName(userName)
     }
+
+    suspend fun updateUser(user: UserEntity) {
+        userDao.updateUser(user)
+    }
 }

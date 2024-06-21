@@ -5,6 +5,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.example.lab4_frameworkmobile.data.database.entities.UserEntity
 import com.example.lab4_frameworkmobile.data.domain.usecases.GetUserDataUseCase
+import com.example.lab4_frameworkmobile.data.domain.usecases.UpdateUserUseCase
 import com.example.lab4_frameworkmobile.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -13,7 +14,8 @@ import javax.inject.Inject
 @HiltViewModel
 class UserDataViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val getUserDataUseCase: GetUserDataUseCase
+    private val getUserDataUseCase: GetUserDataUseCase,
+    private val updateUserUseCase: UpdateUserUseCase
 ) : BaseViewModel(savedStateHandle) {
     val userFull = MutableLiveData<UserEntity>()
     fun loadUserByName(userName: String) {
@@ -28,7 +30,9 @@ class UserDataViewModel @Inject constructor(
         }
     }
 
-    fun updateUser() {
-        TODO()
+    fun updateUser(user: UserEntity) {
+        viewModelScope.launch {
+            updateUserUseCase(user)
+        }
     }
 }

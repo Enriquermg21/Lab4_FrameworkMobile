@@ -3,6 +3,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.example.lab4_frameworkmobile.data.database.entities.UserEntity
 
 @Dao
@@ -21,4 +22,7 @@ interface UserDao {
 
     @Query("SELECT * FROM user_table WHERE name = :userName")
     suspend fun getUserByName(userName: String): UserEntity
+
+    @Update
+    suspend fun updateUser(user: UserEntity)
 }
