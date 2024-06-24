@@ -20,7 +20,6 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
     private var idUser: Int = 0
 
     override fun inflateBinding() {
-        Log.d(TAG, "inflateBinding called")
         binding = FragmentUserDataBinding.inflate(layoutInflater)
     }
 
@@ -29,10 +28,8 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) {
-        Log.d(TAG, "createViewAfterInflateBinding called")
         userData()
         binding?.btnUpdate?.setOnClickListener {
-            Log.d(TAG, "Update button clicked")
             updateUser()
             configNavController()
         }
@@ -91,5 +88,8 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
     override fun viewCreatedAfterSetupObserverViewModel(view: View, savedInstanceState: Bundle?) =
         Unit
 
-    override fun configureToolbarAndConfigScreenSections() = Unit
+    override fun configureToolbarAndConfigScreenSections() {
+        fragmentLayoutWithToolbar()
+        showToolbar(title = "Edit ", showBack = true)
+    }
 }

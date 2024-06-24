@@ -2,14 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <SearchView
+        android:id="@+id/svToolbarSearch"
+        android:layout_width="62dp"
+        android:layout_height="49dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="6dp"
+        android:queryHint="Search by name"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="311dp"
+        tools:layout_editor_absoluteY="8dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
         android:clipToPadding="false"
+        android:padding="16dp"
         android:scrollbars="vertical" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -19,9 +31,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        android:contentDescription="@string/buttonAddContact"
+        android:contentDescription="@string/addForm"
         android:src="@drawable/ic_add"
+        app:backgroundTint="@color/blueLight15B7D0"
         app:fabSize="normal"
-        app:tint="@android:color/white"
-        app:backgroundTint="@color/blueLight15B7D0" />
+        app:tint="@android:color/white" />
+
 </RelativeLayout>

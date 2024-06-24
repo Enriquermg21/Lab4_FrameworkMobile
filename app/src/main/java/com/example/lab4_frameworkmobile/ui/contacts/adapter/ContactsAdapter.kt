@@ -5,22 +5,20 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import com.example.lab4_frameworkmobile.data.database.entities.UserEntity
-import com.example.lab4_frameworkmobile.data.domain.model.user.User
 import com.example.lab4_frameworkmobile.databinding.FragmentContactsItemBinding
 import com.example.lab4_frameworkmobile.ui.contacts.ContactsFragmentDirections
 
-class ContactsAdapter(
-    private val users: List<UserEntity>,
-) : ListAdapter<User, ContactsViewHolder>(UserDiffCallback()) {
+class ContactsAdapter : ListAdapter<UserEntity, ContactsViewHolder>(UserDiffCallback()) {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactsViewHolder {
-        return ContactsViewHolder(
-            FragmentContactsItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+        val binding = FragmentContactsItemBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
         )
+        return ContactsViewHolder(binding)
     }
+
     override fun onBindViewHolder(holder: ContactsViewHolder, position: Int) {
         val user = getItem(position)
         holder.onBind(user)
@@ -30,7 +28,12 @@ class ContactsAdapter(
             findNavController(holder.itemView).navigate(action)
         }
     }
+
+    fun getUserAtPosition(position: Int): UserEntity {
+        return getItem(position)
+    }
 }
+
 
 /*
 TODO()
