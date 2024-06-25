@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
+
 
     <SearchView
         android:id="@+id/svToolbarSearch"
-        android:layout_width="62dp"
-        android:layout_height="49dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/searchview_background"
+        android:iconifiedByDefault="false"
+        android:padding="8dp"
         android:queryHint="Search by name"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="311dp"
-        tools:layout_editor_absoluteY="8dp" />
+        tools:ignore="MissingConstraints" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/RecyclerViewStyle"
+        android:layout_width="397dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/svToolbarSearch"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="9dp"
+        android:background="@color/recyclerViewBackground"
         android:clipToPadding="false"
-        android:padding="16dp"
-        android:scrollbars="vertical" />
+        android:padding="8dp"
+        android:scrollbars="vertical"
+        tools:layout_height="match_parent"
+        tools:listitem="@android:layout/simple_selectable_list_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -35,6 +49,7 @@
         android:src="@drawable/ic_add"
         app:backgroundTint="@color/blueLight15B7D0"
         app:fabSize="normal"
-        app:tint="@android:color/white" />
+        app:tint="@android:color/white"
+        tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>

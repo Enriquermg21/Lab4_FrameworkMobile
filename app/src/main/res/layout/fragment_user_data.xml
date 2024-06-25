@@ -28,6 +28,7 @@
             android:autofillHints=""
             android:inputType="text"
             android:enabled="true"
+            android:imeOptions="actionNext"
             tools:ignore="TextFields" />
 
         <!-- Fecha de nacimiento -->
@@ -46,6 +47,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/user_detail_dateOfBirth_hint"
             android:inputType="date"
+            android:imeOptions="actionNext"
             android:autofillHints="" />
 
         <!-- Color preferido -->
@@ -64,7 +66,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/user_detail_favorite_color_hint"
             android:autofillHints=""
-            android:inputType=""
+            android:inputType="text"
+            android:imeOptions="actionNext"
             tools:ignore="TextFields" />
 
         <!-- Ciudad favorita -->
@@ -83,7 +86,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/user_detail_favorite_city_hint"
             android:autofillHints=""
-            android:inputType=""
+            android:inputType="text"
+            android:imeOptions="actionNext"
             tools:ignore="TextFields" />
 
         <!-- Número favorito -->
@@ -102,6 +106,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/user_detail_favorite_number_hint"
             android:inputType="number"
+            android:imeOptions="actionNext"
             android:autofillHints="" />
 
         <!-- Localización actual -->
@@ -120,6 +125,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/user_detail_location_hint"
             android:inputType="number"
+            android:imeOptions="actionNext"
             android:autofillHints="" />
 
         <Button

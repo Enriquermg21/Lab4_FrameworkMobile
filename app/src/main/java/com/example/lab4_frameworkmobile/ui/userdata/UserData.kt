@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -29,6 +30,7 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
         savedInstanceState: Bundle?
     ) {
         userData()
+        configEditText()
         binding?.btnUpdate?.setOnClickListener {
             updateUser()
             configNavController()
@@ -80,8 +82,37 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
             currentLocation = currentLocation
         )
         Log.d(TAG, "Updated user details: $updatedUser")
+
         userDataViewModel.updateUser(updatedUser)
     }
+
+    private fun configEditText() {
+        binding?.etName?.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                binding?.etName?.clearFocus()
+                true
+            } else {
+                false
+            }
+        }
+        binding?.etFavouriteColor?.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                binding?.etFavouriteColor?.clearFocus()
+                true
+            } else {
+                false
+            }
+        }
+        binding?.etFavoriteCity?.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                binding?.etFavoriteCity?.clearFocus()
+                true
+            } else {
+                false
+            }
+        }
+    }
+
 
     override fun observeViewModel() = Unit
 

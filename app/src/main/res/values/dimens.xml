@@ -14,5 +14,7 @@
     <!--Layout config viewPager -->
     <dimen name="pageMargin">12dp</dimen>
     <dimen name="pagerWidth">350dp</dimen>
+    <dimen name="button_corner_radius">8dp</dimen> <!-- Radio de las esquinas del botón -->
+    <dimen name="button_stroke_width">2dp</dimen> <!-- Ancho del borde del botón -->
 
 </resources>

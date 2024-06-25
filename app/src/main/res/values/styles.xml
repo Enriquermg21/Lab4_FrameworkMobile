@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- Base application theme -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
-
     <!--FONTS-->
     <style name="plusJakartaSansW300Light">
         <item name="android:fontFamily">@font/plus_jakarta_sans_light</item>
@@ -104,10 +100,6 @@
     <!--Loading-->
     <style name="textLoading" parent="plusJakartaSansMedium14h20w500" />
 
-    <!--Icons-->
-    <style name="defaultIconColor">
-        <item name="tint">@color/iconColor</item>
-    </style>
 
     <!--Buttons-->
     <style name="normalButton" parent="Widget.MaterialComponents.Button">
@@ -198,6 +190,19 @@
 
     <!--DrawerMenu-->
     <style name="backgroundClMenuDrawer">
+    </style>
+
+    <style name="RecyclerViewStyle">
+        <item name="android:background">@color/recyclerViewBackground</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbars">vertical</item>
+    </style>
+
+    <style name="RecyclerViewItemStyle">
+        <!-- Estilos para los ítems individuales del RecyclerView -->
+        <item name="android:padding">16dp</item>
+        <item name="android:background">@drawable/item_background</item>
     </style>
 
 </resources>

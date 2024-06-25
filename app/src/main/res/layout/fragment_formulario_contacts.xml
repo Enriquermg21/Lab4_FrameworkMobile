@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#99DFFF"
+
     android:padding="16dp">
 
     <LinearLayout
@@ -14,137 +15,175 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
             android:text="@string/user_detail_name"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_name_hint"
-            android:autofillHints=""
-            android:inputType=""
-            tools:ignore="TextFields" />
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            android:textSize="18sp" />
 
         <!-- Fecha de nacimiento -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
             android:text="@string/user_detail_dateOfBirth"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etBirthDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_dateOfBirth_hint"
+            android:imeOptions="actionNext"
             android:inputType="date"
-            android:autofillHints="" />
+            android:padding="12dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            android:textSize="18sp" />
 
         <!-- Color preferido -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
             android:text="@string/user_detail_favorite_color"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etFavouriteColor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_color_hint"
-            android:autofillHints=""
-            android:inputType=""
-            tools:ignore="TextFields" />
-
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            android:textSize="18sp" />
 
         <!-- Ciudad favorita -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
             android:text="@string/user_detail_favorite_city"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etFavoriteCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_city_hint"
-            android:autofillHints=""
-            android:inputType=""
-            tools:ignore="TextFields" />
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:padding="12dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            android:textSize="18sp" />
 
         <!-- Número favorito -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
             android:text="@string/user_detail_favorite_number"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etFavoriteNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_number_hint"
+            android:imeOptions="actionDone"
             android:inputType="number"
-            android:autofillHints="" />
+            android:padding="12dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            android:textSize="18sp" />
 
         <!-- Localización actual -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
             android:text="@string/actual_location"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/etLatitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:padding="12dp"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/etLongitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:padding="12dp"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/btGetLocation"
-            android:layout_width="wrap_content"
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/getActualLocationButton" />
+            android:layout_marginTop="24dp"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btGetLocation"
+                android:backgroundTint="@drawable/button_background"
+                android:backgroundTintMode="screen"
+                android:layout_width="225dp"
+                android:layout_height="66dp"
+                android:text="@string/getActualLocationButton" />
 
 
-        <!-- Botón para enviar el formulario -->
-        <Button
-            android:id="@+id/btnEnviar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/addForm"
-            android:layout_marginTop="16dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEnviar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@string/addForm"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

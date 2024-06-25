@@ -19,6 +19,10 @@
 
     <!--Elements-->
     <color name="statusBarColor">@color/blue235172</color>
+    <color name="button_pressed_color">#FF5722
+    </color> <!-- Color cuando el botón está presionado -->
+    <color name="button_normal_color">#FF9800</color> <!-- Color normal del botón -->
+    <color name="button_stroke_color">#F57C00</color> <!-- Color del borde del botón -->
 
     <!--General icons-->
     <color name="iconColor">@color/white</color>
@@ -31,4 +35,12 @@
     <!--CustomComponent-->
     <color name="selectedCFF054">#CFF054</color>
     <color name="notSelected2D5FBF">#2D5FBF</color>
+
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="recyclerViewBackground">#FFFFFF</color>
+
+    <color name="lightGray">#999999</color>
+    <color name="primaryTextColor">#333333</color>
+    <color name="secondaryTextColor">#666666</color>
+    <color name="primaryDarkColor">#1976D2</color>
 </resources>

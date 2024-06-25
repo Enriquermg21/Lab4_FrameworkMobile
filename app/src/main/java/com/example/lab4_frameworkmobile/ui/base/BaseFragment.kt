@@ -53,6 +53,9 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
     fun hideToolbar() {
         baseActivity.hideToolbar()
     }
+    fun hideKeyboard() {
+        baseActivity.hideKeyboard()
+    }
 
     fun showToolbar(
         showBack: Boolean = false,

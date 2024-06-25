@@ -1,5 +1,4 @@
 
-
 plugins {
     kotlin("kapt")
     alias(libs.plugins.pluginAndroidApplication)
@@ -115,6 +114,11 @@ dependencies {
     ksp(libs.room.compiler.v261)
     //Google
     implementation(libs.play.services.location)
+
+    androidTestImplementation(libs.junit)
+    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(libs.runner)
+    androidTestImplementation(libs.rules)
 }
 
 kapt {

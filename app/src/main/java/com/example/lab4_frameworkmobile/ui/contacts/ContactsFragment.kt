@@ -72,7 +72,6 @@ class ContactsFragment : BaseFragment<FragmentContactsBinding>() {
             layoutManager = LinearLayoutManager(context)
             adapter = contactsAdapter
 
-            // Configurar el ItemTouchHelper para el deslizamiento
             val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(
                 0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
             ) {
