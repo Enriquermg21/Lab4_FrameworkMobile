@@ -1,6 +1,5 @@
 package com.example.lab4_frameworkmobile.ui.form
 
-import LocationService
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +15,7 @@ import com.example.lab4_frameworkmobile.data.database.entities.UserEntity
 import com.example.lab4_frameworkmobile.databinding.FragmentFormularioContactsBinding
 import com.example.lab4_frameworkmobile.ui.base.BaseFragment
 import com.example.lab4_frameworkmobile.ui.extensions.TAG
+import com.example.lab4_frameworkmobile.ui.location.LocationService
 import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -44,22 +44,25 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
         getLocation()
     }
 
+
     private fun getLocation() {
-        binding?.btGetLocation?.setOnClickListener {
-            viewLifecycleOwner.lifecycleScope.launch {
-                if (locationService.checkLocationPermission()) {
-                    locationService.getLocationUpdates().collect { location ->
-                        if (location != null) {
-                            // Aquí puedes manejar la ubicación obtenida
-                            Log.d(TAG, "Location: ${location.latitude}, ${location.longitude}")
-                        } else {
-                            Log.d(TAG, "No se pudo obtener la ubicación.")
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            if (locationService.checkLocationPermission()) {
+                locationService.getLocationUpdates().collect { location ->
+                    if (location != null) {
+                        binding?.btGetLocation?.setOnClickListener {
+                            binding?.etLatitude?.text = location.latitude.toString()
+                            binding?.etLongitude?.text = location.longitude.toString()
+
                         }
+                    } else {
+                        Log.d(TAG, "No se pudo obtener la ubicación.")
                     }
-                } else {
-                    Log.d(TAG, "Permiso ACCESS_FINE_LOCATION denegado.")
-                    locationService.requestLocationPermission(requireActivity())
                 }
+            } else {
+                Log.d(TAG, "Permiso ACCESS_FINE_LOCATION denegado.")
+                locationService.requestLocationPermission(requireActivity())
             }
         }
     }
@@ -107,10 +110,16 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
                     FormContactsDirections.actionFormularioContactsToContactsFragment()
                 )
             } catch (e: Exception) {
-
+                Log.e("InsertUser", "Error inserting user", e)
+                Toast.makeText(
+                    requireContext(),
+                    "Error inserting user: ${e.message}",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
     }
+
 
     private fun configEditText() {
         binding?.etName?.setOnEditorActionListener { _, actionId, _ ->

@@ -14,9 +14,9 @@ import androidx.core.view.updateLayoutParams
 import androidx.navigation.NavController
 import androidx.viewbinding.ViewBinding
 import com.example.lab4_frameworkmobile.R
+import com.example.lab4_frameworkmobile.ui.dialogfragment.LoadingDialogFragment
 import com.example.lab4_frameworkmobile.ui.extensions.gone
 import com.example.lab4_frameworkmobile.ui.extensions.visible
-import com.vasscompany.vassuniversitybaseproject.ui.dialogfragment.loading.LoadingDialogFragment
 import javax.inject.Inject
 
 abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClickListener {
@@ -51,6 +51,7 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
         super.onSaveInstanceState(outState)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount == 1) {
             finish()
@@ -68,6 +69,7 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
         createAfterInflateBindingSetupObserverViewModel(savedInstanceState)
         setListenersClickToolbarButtons()
     }
+
     fun hideKeyboard() {
         val view = this.currentFocus
         if (view != null) {

@@ -1,3 +1,5 @@
+package com.example.lab4_frameworkmobile.ui.location
+
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -25,8 +27,7 @@ class LocationService(private val context: Context) {
 
     fun checkLocationPermission(): Boolean {
         return ContextCompat.checkSelfPermission(
-            context,
-            Manifest.permission.ACCESS_FINE_LOCATION
+            context, Manifest.permission.ACCESS_FINE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
     }
 
@@ -38,8 +39,7 @@ class LocationService(private val context: Context) {
         }
 
         val locationRequest = LocationRequest.Builder(
-            Priority.PRIORITY_HIGH_ACCURACY,
-            10000 // Intervalo de actualización en milisegundos
+            Priority.PRIORITY_HIGH_ACCURACY, 10000 // Intervalo de actualización en milisegundos
         ).setMinUpdateIntervalMillis(10000) // Intervalo mínimo de actualización en milisegundos
             .build()
 

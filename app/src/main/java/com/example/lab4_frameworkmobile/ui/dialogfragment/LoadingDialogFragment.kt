@@ -1,4 +1,4 @@
-package com.vasscompany.vassuniversitybaseproject.ui.dialogfragment.loading
+package com.example.lab4_frameworkmobile.ui.dialogfragment
 
 import android.app.Dialog
 import android.content.Context
@@ -16,19 +16,12 @@ import com.example.lab4_frameworkmobile.databinding.FragmentDialogLoadingBinding
 
 
 class LoadingDialogFragment : DialogFragment() {
-    companion object {
-        const val LOADING_DIALOG_FRAGMENT_TAG: String = "LOADING_DIALOG_FRAGMENT_TAG"
-
-        const val LOADING_DIALOG_DURATION: Long = 1000
-        const val LOADING_DIALOG_FRAME_COUNT: Int = 12
-    }
 
     private lateinit var binding: FragmentDialogLoadingBinding
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
-//        binding = FragmentDialogLoadingBinding.inflate(LayoutInflater.from(context))
         binding =
             FragmentDialogLoadingBinding.inflate(context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
         dialog.setContentView(binding.root)

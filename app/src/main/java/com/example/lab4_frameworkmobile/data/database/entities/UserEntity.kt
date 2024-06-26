@@ -3,7 +3,6 @@ package com.example.lab4_frameworkmobile.data.database.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.lab4_frameworkmobile.data.domain.model.user.User
 
 @Entity(tableName = "user_table")
 data class UserEntity(
@@ -17,11 +16,3 @@ data class UserEntity(
     @ColumnInfo(name = "currentLocation") val currentLocation: String
 )
 
-fun User.toDatabase() = UserEntity(
-    name = name,
-    dateOfBirth = dateOfBirth,
-    color = color,
-    favoriteCity = favoriteCity,
-    favoriteNumber = favoriteNumber,
-    currentLocation = currentLocation
-)

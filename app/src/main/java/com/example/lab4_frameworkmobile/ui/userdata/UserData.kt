@@ -31,6 +31,7 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
     ) {
         userData()
         configEditText()
+        configMapNavController()
         binding?.btnUpdate?.setOnClickListener {
             updateUser()
             configNavController()
@@ -42,6 +43,15 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
             UserDataDirections.actionUserDataToContactsFragment()
         )
     }
+
+    private fun configMapNavController() {
+        binding?.btnMapFavoriteCity?.setOnClickListener {
+            findNavController().navigate(
+                UserDataDirections.actionUserDataToMapFragment()
+            )
+        }
+    }
+
 
     private fun userData() {
         val args: UserDataArgs by navArgs()

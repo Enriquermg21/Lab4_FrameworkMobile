@@ -97,8 +97,12 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar", "*.jar"))))
     //Android
     implementation(libs.bundles.android)
+    //Maps
+    implementation(libs.bundles.androidMaps)
     //Navigation
     implementation(libs.bundles.navigation)
+    implementation(libs.legacy.support.v4)
+    implementation(libs.fragment.ktx)
     androidTestImplementation(libs.androidxNavigationTesting)
     //Hilt
     implementation(libs.daggerHilt)

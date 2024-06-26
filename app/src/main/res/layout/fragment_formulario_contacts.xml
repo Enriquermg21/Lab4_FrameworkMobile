@@ -85,9 +85,9 @@
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
             android:textSize="18sp"
-            android:focusable="false"
+            android:focusable="true"
             android:clickable="true"
-            android:focusableInTouchMode="false" />
+            android:focusableInTouchMode="true" />
 
         <!-- Ciudad favorita -->
         <TextView

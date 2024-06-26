@@ -12,16 +12,8 @@ class UserRepository @Inject constructor(private val userDao: UserDao) {
         return userDao.getAllUsers()
     }
 
-    suspend fun insertUsersList(user: List<UserEntity>) {
-        userDao.insertAllList(user)
-    }
-
     suspend fun insertUsers(user: UserEntity) {
         userDao.insertAll(user)
-    }
-
-    suspend fun clearUsers() {
-        userDao.deleteAllUsers()
     }
 
     suspend fun getUserByName(userName: String): UserEntity {

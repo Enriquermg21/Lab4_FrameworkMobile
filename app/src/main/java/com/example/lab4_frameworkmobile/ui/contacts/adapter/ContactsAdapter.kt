@@ -33,15 +33,3 @@ class ContactsAdapter : ListAdapter<UserEntity, ContactsViewHolder>(UserDiffCall
         return getItem(position)
     }
 }
-
-
-/*
-TODO()
- AÑADIR LATITUD A LOCALICACION
- BOTON VISTA MAPA
- MODIFICAR LOS POPUPS DE LA NAVEGACION
- ARREGLAR LAS VISTAS,
- HACERLAS MAS BONITAS
- USAR EL HIDE KEYBOARD
- COLOCAR BIEN LA INTRODUCCION DE LOS DATOS
- hacer la vista del mapa entero*/

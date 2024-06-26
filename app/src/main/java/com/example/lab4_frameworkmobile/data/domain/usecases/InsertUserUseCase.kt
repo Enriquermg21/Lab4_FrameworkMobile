@@ -8,14 +8,10 @@ import javax.inject.Inject
 
 class InsertUserUseCase @Inject constructor(private val repository: UserRepository) {
     suspend operator fun invoke(user: UserEntity) {
-        Log.e(TAG, "Error inserting user: $user")
         try {
-            Log.d(TAG, "Inserting user: $user")
             repository.insertUsers(user)
-            Log.d(TAG, "User inserted successfully")
         } catch (e: Exception) {
-            Log.e(TAG, "Error inserting user: $user")
-            Log.e(TAG, "Exception message: ${e.message}")
+            Log.e(TAG, "Error inserting user", e)
             throw e
         }
     }
