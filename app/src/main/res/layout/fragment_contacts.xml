@@ -22,7 +22,6 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        style="@style/RecyclerViewStyle"
         android:layout_width="397dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/svToolbarSearch"

@@ -2,6 +2,7 @@
 #Plugins
 espressoCore = "3.5.1"
 junit = "1.2.0"
+materialVersion = "1.6.0"
 playServicesLocation = "21.3.0"
 pluginAndroidApplication = "8.5.0"
 pluginKotlin = "1.9.23"
@@ -78,6 +79,7 @@ androidxBiometric = { group = "androidx.biometric", name = "biometric", version.
 #Room
 espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
 junit = { module = "androidx.test.ext:junit", version.ref = "junit" }
+material-v160 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 room-compiler-v261 = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 room-ktx-v261 = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }

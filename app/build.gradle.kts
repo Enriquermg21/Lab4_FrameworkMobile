@@ -119,6 +119,8 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     androidTestImplementation(libs.runner)
     androidTestImplementation(libs.rules)
+
+    implementation(libs.material.v160)
 }
 
 kapt {

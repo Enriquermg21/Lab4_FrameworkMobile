@@ -1,8 +1,7 @@
 package com.example.lab4_frameworkmobile.ui.form
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.location.Location
+import LocationService
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,8 +9,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -19,15 +16,19 @@ import com.example.lab4_frameworkmobile.data.database.entities.UserEntity
 import com.example.lab4_frameworkmobile.databinding.FragmentFormularioContactsBinding
 import com.example.lab4_frameworkmobile.ui.base.BaseFragment
 import com.example.lab4_frameworkmobile.ui.extensions.TAG
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
+import com.google.android.material.datepicker.MaterialDatePicker
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+
 
 @AndroidEntryPoint
 class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
     private val formContactsViewModel: FormContactsViewModel by viewModels()
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
+    private var materialDatePicker: MaterialDatePicker<Long>? = null
+    private var dateFormat: SimpleDateFormat? = null
+    private lateinit var locationService: LocationService
 
     override fun inflateBinding() {
         binding = FragmentFormularioContactsBinding.inflate(layoutInflater)
@@ -36,10 +37,31 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
     override fun createViewAfterInflateBinding(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ) {
+        locationService = LocationService(requireContext())
         configButtonEnviar()
         configEditText()
+        configDatePicker()
         getLocation()
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
+    }
+
+    private fun getLocation() {
+        binding?.btGetLocation?.setOnClickListener {
+            viewLifecycleOwner.lifecycleScope.launch {
+                if (locationService.checkLocationPermission()) {
+                    locationService.getLocationUpdates().collect { location ->
+                        if (location != null) {
+                            // Aquí puedes manejar la ubicación obtenida
+                            Log.d(TAG, "Location: ${location.latitude}, ${location.longitude}")
+                        } else {
+                            Log.d(TAG, "No se pudo obtener la ubicación.")
+                        }
+                    }
+                } else {
+                    Log.d(TAG, "Permiso ACCESS_FINE_LOCATION denegado.")
+                    locationService.requestLocationPermission(requireActivity())
+                }
+            }
+        }
     }
 
     private fun configButtonEnviar() {
@@ -76,36 +98,6 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
         }
     }
 
-    private fun getLocation() {
-        binding?.btGetLocation?.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(
-                    requireContext(),
-                    Manifest.permission.ACCESS_FINE_LOCATION
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                ActivityCompat.requestPermissions(
-                    requireActivity(),
-                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                    1
-                )
-            } else {
-                fusedLocationClient.lastLocation
-                    .addOnSuccessListener { location: Location? ->
-                        location?.let {
-
-                            binding?.etLatitude?.text = "waraw"//it.latitude.toString()
-                            binding?.etLongitude?.text = "ar"//it.longitude.toString()
-
-                        } ?: run {
-                            Log.e(TAG, "No se pudo obtener la ubicación")
-                        }
-                    }
-                    .addOnFailureListener {
-                        Log.e(TAG, "Error al obtener la ubicación: ${it.message}")
-                    }
-            }
-        }
-    }
 
     private fun insertUser(user: UserEntity) {
         lifecycleScope.launch {
@@ -115,7 +107,7 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
                     FormContactsDirections.actionFormularioContactsToContactsFragment()
                 )
             } catch (e: Exception) {
-                Log.e(TAG, "Error inserting user: ${e.message}")
+
             }
         }
     }
@@ -146,19 +138,59 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
             }
         }
         binding?.etFavoriteNumber?.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_NEXT) {
-                val nextView = binding?.etFavoriteNumber?.focusSearch(View.FOCUS_DOWN)
-                nextView?.requestFocus()
-                true
-            } else if (actionId == EditorInfo.IME_ACTION_DONE) {
-                hideKeyboard()
-                binding?.etFavoriteNumber?.clearFocus()
-                true
-            } else {
-                false
+            when (actionId) {
+                EditorInfo.IME_ACTION_NEXT -> {
+                    val nextView = binding?.etFavoriteNumber?.focusSearch(View.FOCUS_DOWN)
+                    nextView?.requestFocus()
+                    true
+                }
+
+                EditorInfo.IME_ACTION_DONE -> {
+                    hideKeyboard()
+                    binding?.etFavoriteNumber?.clearFocus()
+                    true
+                }
+
+                else -> {
+                    false
+                }
             }
         }
     }
+
+    @SuppressLint("SimpleDateFormat")
+
+    private fun configDatePicker() {
+        binding?.etBirthDate?.setOnClickListener {
+            Log.d("DatePicker", "Button clicked")
+
+            dateFormat = SimpleDateFormat("dd/MM/yyyy")
+
+            materialDatePicker = MaterialDatePicker.Builder.datePicker()
+                .setTitleText("Selecciona una fecha")
+                .build()
+
+            materialDatePicker!!.addOnPositiveButtonClickListener { selection ->
+                val date = Date(selection)
+                val selectedDate = dateFormat!!.format(date)
+                binding!!.etBirthDate.setText(selectedDate)
+                Toast.makeText(
+                    requireContext(),
+                    "Fecha seleccionada: $selectedDate",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                Log.d("DatePicker", "Fecha seleccionada: $selectedDate")
+            }
+            showDatePickerDialog()
+        }
+    }
+
+    private fun showDatePickerDialog() {
+        Log.d("DatePicker", "Showing date picker dialog")
+        materialDatePicker?.show(childFragmentManager, "DATE_PICKER")
+    }
+
 
     override fun observeViewModel() = Unit
 
