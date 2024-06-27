@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.form.FormContacts">
+    tools:context=".ui.form.FormContacts"
+    android:background="#C0E6F8">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,132 +15,190 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_detail_name"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"
+            android:text="@string/user_detail_name"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/user_detail_name_hint"
+            android:layout_height="40dp"
             android:autofillHints=""
-            android:inputType="text"
+            android:background="@drawable/edittext_background"
             android:enabled="true"
+            android:hint="@string/user_detail_name_hint"
             android:imeOptions="actionNext"
-            tools:ignore="TextFields" />
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            tools:ignore="RtlSymmetry" />
 
         <!-- Fecha de nacimiento -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_detail_dateOfBirth"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"
+            android:text="@string/user_detail_dateOfBirth"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etBirthDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_dateOfBirth_hint"
-            android:inputType="date"
             android:imeOptions="actionNext"
-            android:autofillHints="" />
+            android:inputType="date"
+            android:paddingStart="16dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            tools:ignore="RtlSymmetry" />
 
         <!-- Color preferido -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_detail_favorite_color"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"
+            android:text="@string/user_detail_favorite_color"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etFavouriteColor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/user_detail_favorite_color_hint"
+            android:layout_height="40dp"
             android:autofillHints=""
-            android:inputType="text"
+            android:background="@drawable/edittext_background"
+            android:hint="@string/user_detail_favorite_color_hint"
             android:imeOptions="actionNext"
-            tools:ignore="TextFields" />
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            tools:ignore="RtlSymmetry" />
 
         <!-- Ciudad favorita -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_detail_favorite_city"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"
+            android:text="@string/user_detail_favorite_city"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etFavoriteCity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/user_detail_favorite_city_hint"
+            android:layout_height="40dp"
             android:autofillHints=""
-            android:inputType="text"
+            android:background="@drawable/edittext_background"
+            android:hint="@string/user_detail_favorite_city_hint"
             android:imeOptions="actionNext"
-            tools:ignore="TextFields" />
+            android:inputType="text"
+            android:paddingStart="16dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            tools:ignore="RtlSymmetry" />
 
         <!-- Número favorito -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/user_detail_favorite_number"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"
+            android:text="@string/user_detail_favorite_number"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etFavoriteNumber"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_number_hint"
-            android:inputType="number"
             android:imeOptions="actionNext"
-            android:autofillHints="" />
+            android:inputType="number"
+            android:paddingStart="16dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            tools:ignore="RtlSymmetry" />
 
         <!-- Localización actual -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/actual_location"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="8dp"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="4dp"
+            android:text="@string/actual_location"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etLocation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:background="@drawable/edittext_backgrandeditfragment"
             android:hint="@string/user_detail_location_hint"
-            android:inputType="number"
             android:imeOptions="actionNext"
-            android:autofillHints="" />
+            android:inputType="number"
+            android:paddingStart="16dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textColorHint="@color/secondaryTextColor"
+            tools:ignore="RtlSymmetry" />
 
-        <Button
-            android:id="@+id/btnUpdate"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/updateUser"
-            android:layout_marginTop="16dp" />
+            android:layout_height="209dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnMapFavoriteCity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/btFavoriteCity" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUpdate"
+                android:layout_width="240dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/btn_shadow"
+                android:text="@string/updateUser"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnMapFavoriteCity"
+                android:layout_width="240dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_shadow"
+                android:text="@string/btFavoriteCity"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>

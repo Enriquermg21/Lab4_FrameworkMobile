@@ -5,13 +5,14 @@
     android:id="@+id/clToolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/blue235172">
+    android:background="#3E92CE">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:gravity="center"
+        android:background="@drawable/toolbar_background"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -57,6 +58,7 @@
         android:layout_marginEnd="114dp"
         android:maxLines="1"
         android:singleLine="true"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

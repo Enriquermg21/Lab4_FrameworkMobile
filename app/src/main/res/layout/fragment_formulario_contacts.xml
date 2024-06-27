@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#99DFFF"
+    android:background="#C0E6F8"
 
     android:padding="16dp">
 
@@ -15,6 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="@string/user_detail_name"
@@ -39,6 +40,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="@string/user_detail_dateOfBirth"
@@ -51,21 +53,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_background"
+            android:clickable="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:hint="@string/user_detail_dateOfBirth_hint"
             android:imeOptions="actionNext"
             android:inputType="date"
             android:padding="12dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            android:textSize="18sp"
-            android:focusable="false"
-            android:clickable="true"
-            android:focusableInTouchMode="false" />
+            android:textSize="18sp" />
 
         <!-- Color preferido -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="@string/user_detail_favorite_color"
@@ -78,21 +81,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:hint="@string/user_detail_favorite_color_hint"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:padding="12dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            android:textSize="18sp"
-            android:focusable="true"
-            android:clickable="true"
-            android:focusableInTouchMode="true" />
+            android:textSize="18sp" />
 
         <!-- Ciudad favorita -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="@string/user_detail_favorite_city"
@@ -117,6 +121,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="@string/user_detail_favorite_number"
@@ -141,6 +146,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
             android:text="@string/actual_location"
@@ -152,44 +158,69 @@
             android:id="@+id/etLatitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textColor="@color/primaryTextColor"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_textview_background"
+            android:elevation="4dp"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/etLongitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:textColor="@color/primaryTextColor"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_textview_background"
+            android:elevation="4dp"
+            android:fontFamily="@font/plus_jakarta_sans_bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:shadowColor="@color/black"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:textColor="@color/white"
             android:textSize="18sp" />
+
 
         <!-- Botones -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="209dp"
             android:layout_marginTop="24dp"
-            android:gravity="end"
-            android:orientation="horizontal">
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <com.google.android.material.button.MaterialButton
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btGetLocation"
-                android:backgroundTint="@drawable/button_background"
-                android:backgroundTintMode="screen"
-                android:layout_width="225dp"
-                android:layout_height="66dp"
-                android:text="@string/getActualLocationButton" />
-
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnEnviar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:text="@string/addForm"
+                android:layout_width="240dp"
+                android:layout_height="53dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/btn_shadow"
+                android:text="@string/getActualLocationButton"
+                android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnEnviar"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/btn_shadow"
+                android:text="@string/addForm"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
