@@ -118,6 +118,10 @@ dependencies {
     ksp(libs.room.compiler.v261)
     //Google
     implementation(libs.play.services.location)
+    //SplashScreen
+    implementation(libs.core.splashscreen.v100)
+    //Test
+    testImplementation(libs.junit)
 
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)

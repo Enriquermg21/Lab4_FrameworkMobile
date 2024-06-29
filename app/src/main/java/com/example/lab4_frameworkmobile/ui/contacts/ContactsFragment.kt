@@ -132,7 +132,6 @@ class ContactsFragment : BaseFragment<FragmentContactsBinding>() {
             )
         }
     }
-
     override fun observeViewModel() = Unit
     override fun viewCreatedAfterSetupObserverViewModel(view: View, savedInstanceState: Bundle?) =
         Unit

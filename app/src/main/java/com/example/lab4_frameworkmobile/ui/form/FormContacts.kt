@@ -38,10 +38,10 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ) {
         locationService = LocationService(requireContext())
+        getLocation()
         configButtonEnviar()
         configEditText()
         configDatePicker()
-        getLocation()
     }
 
 
@@ -198,6 +198,9 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
     private fun showDatePickerDialog() {
         Log.d("DatePicker", "Showing date picker dialog")
         materialDatePicker?.show(childFragmentManager, "DATE_PICKER")
+    }
+
+    private fun configColorPicker() {
     }
 
 

@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.updateLayoutParams
 import androidx.navigation.NavController
 import androidx.viewbinding.ViewBinding
@@ -62,12 +63,18 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        screenSplash()
         inflateBinding()
         setContentView(binding.root)
         findViewByIdToolbar()
         observeViewModel()
         createAfterInflateBindingSetupObserverViewModel(savedInstanceState)
         setListenersClickToolbarButtons()
+    }
+
+    private fun screenSplash() {
+        val screenSplash = installSplashScreen()
+        screenSplash.setKeepOnScreenCondition { false }
     }
 
     fun hideKeyboard() {

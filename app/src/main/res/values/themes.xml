@@ -3,7 +3,20 @@
     <style name="Base.theme.Lab4_FrameworkMobile" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="materialCalendarTheme">@style/CustomMaterialCalendarTheme</item>
     </style>
 
-    <style name="Theme.ChitChat" parent="Base.theme.Lab4_FrameworkMobile" />
+    <!-- Custom Material Calendar Theme -->
+    <style name="CustomMaterialCalendarTheme" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <!-- Customize your calendar theme here -->
+        <item name="materialCalendarStyle">@style/Widget.Material3.MaterialCalendar</item>
+    </style>
+
+    <!-- Theme for the SplashScreen -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/blueLight15B7D0</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/iconsplash</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Base.theme.Lab4_FrameworkMobile</item>
+    </style>
 </resources>

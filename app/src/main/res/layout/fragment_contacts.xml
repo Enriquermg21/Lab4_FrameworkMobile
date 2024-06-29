@@ -9,6 +9,7 @@
 
     <SearchView
         android:id="@+id/svToolbarSearch"
+        android:theme="@style/Base.theme.Lab4_FrameworkMobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -18,6 +19,7 @@
         android:iconifiedByDefault="false"
         android:padding="8dp"
         android:queryHint="Search by name"
+
         tools:ignore="MissingConstraints" />
 
 

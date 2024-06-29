@@ -12,10 +12,14 @@
         tools:layout="@layout/fragment_contacts">
         <action
             android:id="@+id/action_contactsFragment_to_formularioContacts"
-            app:destination="@id/formularioContacts" />
+            app:destination="@id/formularioContacts"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
         <action
             android:id="@+id/action_contactsFragment_to_userData"
-            app:destination="@id/userData" />
+            app:destination="@id/userData"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/formularioContacts"
@@ -25,6 +29,8 @@
         <action
             android:id="@+id/action_formularioContacts_to_contactsFragment"
             app:destination="@id/contactsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/contactsFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -36,6 +42,8 @@
         <action
             android:id="@+id/action_userData_to_contactsFragment"
             app:destination="@id/contactsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
             app:popUpTo="@id/contactsFragment"
             app:popUpToInclusive="true" />
         <argument
@@ -43,7 +51,9 @@
             app:argType="string" />
         <action
             android:id="@+id/action_userData_to_mapFragment"
-            app:destination="@id/mapFragment" />
+            app:destination="@id/mapFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/mapFragment"

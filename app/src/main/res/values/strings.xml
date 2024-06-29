@@ -114,7 +114,7 @@
     <string name="getActualLocationButton">Get Actual Location</string>
     <string name="addForm">Save</string>
     <string name="updateUser">Update</string>
-    <string name="btFavoriteCity">Show favorite city on map</string>
+    <string name="btFavoriteCity">Show favorite city</string>
     <string name="user_detail_location_hint">Actual Location</string>
 
     <!-- RickMorty-->

@@ -1,5 +1,6 @@
 [versions]
 #Plugins
+coreSplashscreen = "1.0.0"
 espressoCore = "3.5.1"
 junit = "1.2.0"
 materialVersion = "1.6.0"
@@ -62,6 +63,7 @@ androidxNavigationCompose = { group = "androidx.navigation", name = "navigation-
 androidxNavigationTesting = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxNavigation" }
 
 #Hilt
+core-splashscreen-v100 = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 daggerHilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 daggerHiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 
