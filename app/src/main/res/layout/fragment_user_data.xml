@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.form.FormContacts"
-    android:background="#C0E6F8">
+    android:background="#C0E6F8"
+    tools:context=".ui.form.FormContacts">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
         <EditText
             android:id="@+id/etName"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:enabled="true"
@@ -36,7 +36,7 @@
             android:paddingStart="16dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
         <!-- Fecha de nacimiento -->
         <TextView
@@ -53,7 +53,7 @@
         <EditText
             android:id="@+id/etBirthDate"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_dateOfBirth_hint"
@@ -62,7 +62,7 @@
             android:paddingStart="16dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
         <!-- Color preferido -->
         <TextView
@@ -79,7 +79,7 @@
         <EditText
             android:id="@+id/etFavouriteColor"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_color_hint"
@@ -88,7 +88,7 @@
             android:paddingStart="16dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
         <!-- Ciudad favorita -->
         <TextView
@@ -105,7 +105,7 @@
         <EditText
             android:id="@+id/etFavoriteCity"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_city_hint"
@@ -114,7 +114,7 @@
             android:paddingStart="16dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
         <!-- Número favorito -->
         <TextView
@@ -131,7 +131,7 @@
         <EditText
             android:id="@+id/etFavoriteNumber"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_number_hint"
@@ -140,7 +140,7 @@
             android:paddingStart="16dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry,VisualLintTextFieldSize" />
 
         <!-- Localización actual -->
         <TextView
@@ -157,7 +157,7 @@
         <EditText
             android:id="@+id/etLocation"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:autofillHints=""
             android:background="@drawable/edittext_backgrandeditfragment"
             android:hint="@string/user_detail_location_hint"
@@ -166,7 +166,7 @@
             android:paddingStart="16dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry,DuplicateSpeakableTextCheck,VisualLintTextFieldSize" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -183,7 +183,7 @@
                 android:background="@drawable/btn_shadow"
                 android:text="@string/updateUser"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="#455A64"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -195,7 +195,7 @@
                 android:background="@drawable/btn_shadow"
                 android:text="@string/btFavoriteCity"
                 android:textAllCaps="false"
-                android:textColor="@color/white"
+                android:textColor="#455A64"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="3dp">
@@ -9,19 +10,21 @@
         android:layout_height="wrap_content"
 
         android:background="@drawable/border"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/account"
-            android:backgroundTint="@color/black" />
+            android:backgroundTint="@color/black"
+            android:contentDescription="@string/iconimage" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
             android:orientation="vertical">
 
             <TextView

@@ -201,8 +201,9 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
     }
 
     private fun configColorPicker() {
+        binding?.etFavouriteColor?.setOnClickListener {
+        }
     }
-
 
     override fun observeViewModel() = Unit
 

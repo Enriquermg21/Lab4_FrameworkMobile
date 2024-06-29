@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C0E6F8"
@@ -27,6 +28,7 @@
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_name_hint"
             android:imeOptions="actionNext"
@@ -34,7 +36,8 @@
             android:padding="12dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="VisualLintTextFieldSize" />
 
         <!-- Fecha de nacimiento -->
         <TextView
@@ -52,9 +55,10 @@
             android:id="@+id/etBirthDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:clickable="true"
-            android:focusable="false"
+            android:focusable="true"
             android:focusableInTouchMode="false"
             android:hint="@string/user_detail_dateOfBirth_hint"
             android:imeOptions="actionNext"
@@ -62,7 +66,8 @@
             android:padding="12dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="VisualLintTextFieldSize" />
 
         <!-- Color preferido -->
         <TextView
@@ -80,22 +85,25 @@
             android:id="@+id/etFavouriteColor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:clickable="true"
             android:focusable="true"
-            android:focusableInTouchMode="true"
+            android:focusableInTouchMode="false"
             android:hint="@string/user_detail_favorite_color_hint"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:padding="12dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="VisualLintTextFieldSize" />
 
         <!-- Ciudad favorita -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:fontFamily="@font/plus_jakarta_sans_bold"
             android:paddingTop="16dp"
             android:paddingBottom="8dp"
@@ -108,6 +116,7 @@
             android:id="@+id/etFavoriteCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_city_hint"
             android:imeOptions="actionNext"
@@ -115,7 +124,8 @@
             android:padding="12dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="VisualLintTextFieldSize" />
 
         <!-- Número favorito -->
         <TextView
@@ -133,6 +143,7 @@
             android:id="@+id/etFavoriteNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:background="@drawable/edittext_background"
             android:hint="@string/user_detail_favorite_number_hint"
             android:imeOptions="actionDone"
@@ -140,7 +151,8 @@
             android:padding="12dp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:ignore="VisualLintTextFieldSize" />
 
         <!-- Localización actual -->
         <TextView
@@ -220,7 +232,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="40sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:ignore="VisualLintButtonSize" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

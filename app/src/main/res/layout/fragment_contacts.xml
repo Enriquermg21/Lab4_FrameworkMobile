@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E4DAE6">
+    android:background="#E4DAE6"
+    tools:ignore="VisualLintBounds,VisualLintTextFieldSize">
 
 
     <SearchView
         android:id="@+id/svToolbarSearch"
-        android:theme="@style/Base.theme.Lab4_FrameworkMobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -19,6 +19,7 @@
         android:iconifiedByDefault="false"
         android:padding="8dp"
         android:queryHint="Search by name"
+        android:theme="@style/Base.theme.Lab4_FrameworkMobile"
 
         tools:ignore="MissingConstraints" />
 
@@ -52,6 +53,6 @@
         app:backgroundTint="@color/blueLight15B7D0"
         app:fabSize="normal"
         app:tint="@android:color/white"
-        tools:ignore="RelativeOverlap" />
+        tools:ignore="RelativeOverlap,ImageContrastCheck" />
 
 </RelativeLayout>

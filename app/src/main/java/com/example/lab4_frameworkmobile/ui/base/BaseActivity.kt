@@ -15,10 +15,8 @@ import androidx.core.view.updateLayoutParams
 import androidx.navigation.NavController
 import androidx.viewbinding.ViewBinding
 import com.example.lab4_frameworkmobile.R
-import com.example.lab4_frameworkmobile.ui.dialogfragment.LoadingDialogFragment
 import com.example.lab4_frameworkmobile.ui.extensions.gone
 import com.example.lab4_frameworkmobile.ui.extensions.visible
-import javax.inject.Inject
 
 abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClickListener {
     companion object {
@@ -35,10 +33,7 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
     private var tvToolbarTitle: TextView? = null
     private var ibToolbarClose: ImageButton? = null
     private var ivClose: ImageView? = null
-    private var loadingDialogFragment: LoadingDialogFragment = LoadingDialogFragment()
 
-    @Inject
-    lateinit var baseActivityControlShowLoading: BaseActivityControlShowLoading
 
     lateinit var navController: NavController
 
@@ -247,26 +242,6 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
             tvToolbarTitle?.text = title
         } else {
             tvToolbarTitle?.gone()
-        }
-    }
-
-    fun showLoading(show: Boolean) {
-        if (show) {
-            if (baseActivityControlShowLoading.canShowLoading(
-                    supportFragmentManager,
-                    LOADING_DIALOG_FRAGMENT_TAG
-                )
-            ) {
-                loadingDialogFragment.show(supportFragmentManager, LOADING_DIALOG_FRAGMENT_TAG)
-            }
-        } else {
-            if (baseActivityControlShowLoading.canHideLoading(
-                    supportFragmentManager,
-                    LOADING_DIALOG_FRAGMENT_TAG
-                )
-            ) {
-                loadingDialogFragment.dismiss()
-            }
         }
     }
 
