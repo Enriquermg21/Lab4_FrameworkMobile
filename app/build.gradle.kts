@@ -123,6 +123,9 @@ dependencies {
     //Test
     testImplementation(libs.junit)
     //ColorPicker
+    implementation(libs.quadflask.colorpicker)
+    implementation(libs.ambilwarna)
+    implementation(libs.colorpicker)
 
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.espresso.core)
