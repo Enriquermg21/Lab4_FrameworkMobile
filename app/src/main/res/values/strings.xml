@@ -178,6 +178,7 @@
     <!-- ToolbarBt-->
     <string name="btatoolbarback">btaToolbarBack</string>
     <string name="ibtoolbarclose">ibToolbarClose</string>
+    <string name="colorImageUserData">ImageColor</string>
     <!-- TODO: Remove or change this placeholder text -->
 
 </resources>
