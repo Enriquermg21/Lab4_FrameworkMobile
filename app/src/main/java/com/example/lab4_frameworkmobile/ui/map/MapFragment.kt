@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.lab4_frameworkmobile.R
 import com.example.lab4_frameworkmobile.databinding.FragmentMapBinding
 import com.example.lab4_frameworkmobile.ui.base.BaseFragment
@@ -39,6 +40,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), OnMapReadyCallback {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) {
+        configBackButton()
         locationService = LocationService(requireContext())
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
@@ -55,6 +57,13 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), OnMapReadyCallback {
         super.onDestroyView()
         if (this::myGoogleMap.isInitialized) {
             myGoogleMap.clear()
+        }
+    }
+    private fun configBackButton() {
+        binding?.fabBack?.setOnClickListener {
+            findNavController().navigate(
+                MapFragmentDirections.actionMapFragmentToUserData("")
+            )
         }
     }
 

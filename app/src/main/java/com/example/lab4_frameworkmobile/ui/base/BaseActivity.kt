@@ -19,9 +19,6 @@ import com.example.lab4_frameworkmobile.ui.extensions.gone
 import com.example.lab4_frameworkmobile.ui.extensions.visible
 
 abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClickListener {
-    companion object {
-        const val LOADING_DIALOG_FRAGMENT_TAG: String = "LOADING_DIALOG_FRAGMENT_TAG"
-    }
 
     lateinit var binding: B
 
@@ -29,9 +26,7 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
     private var clToolbar: ConstraintLayout? = null
     private var tbToolbar: Toolbar? = null
     private var ibToolbarBack: ImageButton? = null
-    private var ibToolbarMenu: ImageButton? = null
     private var tvToolbarTitle: TextView? = null
-    private var ibToolbarClose: ImageButton? = null
     private var ivClose: ImageView? = null
 
 
@@ -84,23 +79,17 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
         clToolbar = findViewById(R.id.clToolbar)
         tbToolbar = findViewById(R.id.tbToolbar)
         ibToolbarBack = findViewById(R.id.ibToolbarBack)
-        ibToolbarMenu = findViewById(R.id.ibToolbarMenu)
         tvToolbarTitle = findViewById(R.id.tvToolbarTitle)
-        ibToolbarClose = findViewById(R.id.ibToolbarClose)
     }
 
     private fun setListenersClickToolbarButtons() {
         ibToolbarBack?.setOnClickListener(this)
-        ibToolbarMenu?.setOnClickListener(this)
-        ibToolbarClose?.setOnClickListener(this)
         ivClose?.setOnClickListener((this))
     }
 
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.ibToolbarBack -> clickToolbarBack()
-            R.id.ibToolbarMenu -> clickToolbarMenu()
-            R.id.ibToolbarClose -> clickToolbarClose()
         }
     }
 
@@ -116,16 +105,12 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
 
     private fun hideAllElementToolbar() {
         ibToolbarBack?.gone()
-        ibToolbarMenu?.gone()
         tvToolbarTitle?.gone()
-        ibToolbarClose?.gone()
     }
 
     fun showToolbar(
         showBack: Boolean = false,
-        showMenu: Boolean = false,
         title: String = "",
-        showClose: Boolean = false,
     ) {
         var maxIconLeft = 0
         var maxIconRight = 0
@@ -135,14 +120,6 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
         if (showBack) {
             maxIconLeft++
             ibToolbarBack?.visible()
-        }
-        if (showMenu) {
-            maxIconLeft++
-            ibToolbarMenu?.visible()
-        }
-        if (showClose) {
-            maxIconRight++
-            ibToolbarClose?.visible()
         }
         if (title.isNotBlank()) {
             tvToolbarTitle?.visible()
@@ -209,14 +186,6 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
             ibToolbarBack?.visible()
         } else {
             ibToolbarBack?.gone()
-        }
-    }
-
-    fun updateShowToolbarMenu(showMenu: Boolean) {
-        if (showMenu) {
-            ibToolbarMenu?.visible()
-        } else {
-            ibToolbarMenu?.gone()
         }
     }
 

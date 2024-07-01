@@ -1,16 +1,20 @@
 package com.example.lab4_frameworkmobile.ui.form
 
 import android.annotation.SuppressLint
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import android.widget.SeekBar
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.lab4_frameworkmobile.R
 import com.example.lab4_frameworkmobile.data.database.entities.UserEntity
 import com.example.lab4_frameworkmobile.databinding.FragmentFormularioContactsBinding
 import com.example.lab4_frameworkmobile.ui.base.BaseFragment
@@ -29,6 +33,9 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
     private var materialDatePicker: MaterialDatePicker<Long>? = null
     private var dateFormat: SimpleDateFormat? = null
     private lateinit var locationService: LocationService
+    private var redValue = 0
+    private var greenValue = 0
+    private var blueValue = 0
 
     override fun inflateBinding() {
         binding = FragmentFormularioContactsBinding.inflate(layoutInflater)
@@ -38,10 +45,12 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ) {
         locationService = LocationService(requireContext())
+        setColor()
         getLocation()
         configButtonEnviar()
         configEditText()
         configDatePicker()
+
     }
 
 
@@ -71,13 +80,13 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
         binding?.btnEnviar?.setOnClickListener {
             val name = binding?.etName?.text?.toString() ?: ""
             val dateOfBirth = binding?.etBirthDate?.text?.toString() ?: ""
-            val color = binding?.etFavouriteColor?.text?.toString() ?: ""
+            val colorImage = getColorFromImageView()
             val favoriteCity = binding?.etFavoriteCity?.text?.toString() ?: ""
             val favoriteNumber = binding?.etFavoriteNumber?.text?.toString() ?: ""
             val latitude = binding?.etLatitude?.text?.toString() ?: ""
             val longitude = binding?.etLongitude?.text?.toString() ?: ""
 
-            if (name.isEmpty() || dateOfBirth.isEmpty() || color.isEmpty() ||
+            if (name.isEmpty() || dateOfBirth.isEmpty() || colorImage.isEmpty() ||
                 favoriteCity.isEmpty() || favoriteNumber.isEmpty() || latitude.isEmpty() || longitude.isEmpty()
             ) {
                 Toast.makeText(
@@ -92,7 +101,7 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
                 0,
                 name,
                 dateOfBirth,
-                color,
+                colorImage,
                 favoriteCity,
                 favoriteNumber,
                 "$latitude, $longitude"
@@ -125,14 +134,6 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
         binding?.etName?.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 binding?.etName?.clearFocus()
-                true
-            } else {
-                false
-            }
-        }
-        binding?.etFavouriteColor?.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_DONE) {
-                binding?.etFavouriteColor?.clearFocus()
                 true
             } else {
                 false
@@ -199,10 +200,35 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
         Log.d("DatePicker", "Showing date picker dialog")
         materialDatePicker?.show(childFragmentManager, "DATE_PICKER")
     }
+    private fun setColor() {
+        binding?.seekBarR?.setOnSeekBarChangeListener(mChangeListener)
+        binding?.seekBarG?.setOnSeekBarChangeListener(mChangeListener)
+        binding?.seekBarB?.setOnSeekBarChangeListener(mChangeListener)
+    }
 
-    private fun configColorPicker() {
-        binding?.etFavouriteColor?.setOnClickListener {
+    private val mChangeListener = object : SeekBar.OnSeekBarChangeListener {
+        override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
+            when (seekBar.id) {
+                R.id.seekBarR -> redValue = progress
+                R.id.seekBarG -> greenValue = progress
+                R.id.seekBarB -> blueValue = progress
+            }
+            val color = Color.rgb(redValue, greenValue, blueValue)
+            binding?.colorImageView?.setBackgroundColor(color)
         }
+
+        override fun onStartTrackingTouch(seekBar: SeekBar) {
+        }
+
+        override fun onStopTrackingTouch(seekBar: SeekBar) {
+
+        }
+    }
+
+    private fun getColorFromImageView(): String {
+        val colorDrawable = binding?.colorImageView?.background as ColorDrawable
+        val colorInt = colorDrawable.color
+        return String.format("#%06X", 0xFFFFFF and colorInt)
     }
 
     override fun observeViewModel() = Unit

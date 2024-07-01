@@ -116,6 +116,7 @@
     <string name="updateUser">Update</string>
     <string name="btFavoriteCity">Show favorite city</string>
     <string name="user_detail_location_hint">Actual Location</string>
+    <string name="iconimage">iconImage</string>
 
     <!-- RickMorty-->
     <string name="rick_morty_title_toolbar">RickMorty</string>
@@ -173,7 +174,8 @@
     <string name="navigation_nav_d_back_exit">Navegar a D, back Exit</string>
     <string name="navigation_nav_e">Navegar a E</string>
     <string name="navigation_nav_f">Navegar a F</string>
-    <string name="iconimage">iconImage</string>
+
+    <!-- ToolbarBt-->
     <string name="btatoolbarback">btaToolbarBack</string>
     <string name="ibtoolbarclose">ibToolbarClose</string>
     <!-- TODO: Remove or change this placeholder text -->
