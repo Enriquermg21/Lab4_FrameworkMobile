@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/formularioContacts"
-        android:name="com.example.lab4_frameworkmobile.ui.form.FormContacts"
+        android:name="com.example.lab4_frameworkmobile.ui.form.FormContactsFragment"
         android:label="fragment_formulario_contacts"
         tools:layout="@layout/fragment_formulario_contacts">
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/userData"
-        android:name="com.example.lab4_frameworkmobile.ui.userdata.UserData"
+        android:name="com.example.lab4_frameworkmobile.ui.userdata.UserDataFragment"
         android:label="fragment_user_data"
         tools:layout="@layout/fragment_user_data">
         <action

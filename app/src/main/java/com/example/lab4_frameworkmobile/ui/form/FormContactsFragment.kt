@@ -24,7 +24,7 @@ import java.util.Date
 
 
 @AndroidEntryPoint
-class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
+class FormContactsFragment : BaseFragment<FragmentFormularioContactsBinding>() {
     private val formContactsViewModel: FormContactsViewModel by viewModels()
     private var materialDatePicker: MaterialDatePicker<Long>? = null
     private var dateFormat: SimpleDateFormat? = null
@@ -107,7 +107,7 @@ class FormContacts : BaseFragment<FragmentFormularioContactsBinding>() {
             try {
                 formContactsViewModel.insertUser(user)
                 findNavController().navigate(
-                    FormContactsDirections.actionFormularioContactsToContactsFragment()
+                    FormContactsFragmentDirections.actionFormularioContactsToContactsFragment()
                 )
             } catch (e: Exception) {
                 Log.e("InsertUser", "Error inserting user", e)
