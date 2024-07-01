@@ -79,7 +79,8 @@
         <ImageView
             android:id="@+id/colorImageView"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:contentDescription="@string/colorImageUserData"/>
 
         <SeekBar
             android:id="@+id/seekBarR"
@@ -163,19 +164,20 @@
             android:textSize="22sp"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/etLocation"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:autofillHints=""
-            android:background="@drawable/edittext_backgrandeditfragment"
             android:hint="@string/user_detail_location_hint"
             android:imeOptions="actionNext"
             android:inputType="number"
             android:paddingStart="16dp"
+            android:paddingTop="13dp"
+            android:textSize="18sp"
             android:textColor="@color/primaryDarkColor"
             android:textColorHint="@color/secondaryTextColor"
-            tools:ignore="RtlSymmetry,DuplicateSpeakableTextCheck,VisualLintTextFieldSize" />
+            tools:ignore="DuplicateSpeakableTextCheck,RtlSymmetry,TextViewEdits,VisualLintTextFieldSize" />
 
         <LinearLayout
             android:layout_width="match_parent"

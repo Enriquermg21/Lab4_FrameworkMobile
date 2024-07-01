@@ -61,9 +61,8 @@
         android:label="fragment_map"
         tools:layout="@layout/fragment_map">
         <action
-            android:id="@+id/action_mapFragment_to_userData"
-            app:destination="@id/userData"
-            app:enterAnim="@anim/slide_in_right" />
+            android:id="@+id/action_mapFragment_to_contactsFragment"
+            app:destination="@id/contactsFragment" />
     </fragment>
 
 </navigation>

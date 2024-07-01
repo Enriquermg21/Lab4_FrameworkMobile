@@ -62,7 +62,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(), OnMapReadyCallback {
     private fun configBackButton() {
         binding?.fabBack?.setOnClickListener {
             findNavController().navigate(
-                MapFragmentDirections.actionMapFragmentToUserData("")
+                MapFragmentDirections.actionMapFragmentToContactsFragment()
             )
         }
     }

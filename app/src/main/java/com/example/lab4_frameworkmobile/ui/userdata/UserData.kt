@@ -75,7 +75,7 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
                 binding?.colorImageView?.setBackgroundColor(Color.parseColor(user.color))
                 binding?.etFavoriteCity?.setText(user.favoriteCity)
                 binding?.etFavoriteNumber?.setText(user.favoriteNumber)
-                binding?.etLocation?.setText(user.currentLocation)
+                binding?.etLocation?.text = user.currentLocation
                 getColor(user.color)
             } else {
                 Log.e(TAG, "User not found for name: $userName")
