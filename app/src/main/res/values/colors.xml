@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--General-->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#4B5563</color>
+    <color name="gray_background">#979797</color>
+    <color name="transparent">#00000000</color>
+
+    <!--Color Palette-->
+    <color name="blue235172">#235172</color>
+    <color name="blueLight15B7D0">#15B7D0</color>
+    <color name="grayLightD4D8D8">#D4D8D8</color>
+    <color name="creamF8F5BF">#F8F5BF</color>
+    <color name="black0B031E">#0B031E</color>
+    <color name="orangeC7220D">#C7220D</color>
+    <color name="orangeLightD2A14C">#D2A14C</color>
+    <color name="purple">#3F51B5</color>
+    <color name="darker_gray">#AAAAAA</color>
+
+    <!--Elements-->
+    <color name="statusBarColor">@color/blue235172</color>
+    <color name="button_pressed_color">#FF5722
+    </color> <!-- Color cuando el botón está presionado -->
+    <color name="button_normal_color">#FF9800</color> <!-- Color normal del botón -->
+    <color name="button_stroke_color">#F57C00</color> <!-- Color del borde del botón -->
+
+    <!--General icons-->
+    <color name="iconColor">@color/white</color>
+
+    <!--BottomSheetDialog-->
+    <color name="stripeColorBottomSheetDialog">@color/gray</color>
+    <color name="windowBackgroundBottomSheetDialog">@color/black0B031E</color>
+
+
+    <!--CustomComponent-->
+    <color name="selectedCFF054">#CFF054</color>
+    <color name="notSelected2D5FBF">#2D5FBF</color>
+
+    <color name="backgroundColor">#F5F5F5</color>
+    <color name="recyclerViewBackground">#FFFFFF</color>
+
+    <color name="lightGray">#999999</color>
+    <color name="primaryTextColor">#333333</color>
+    <color name="secondaryTextColor">#666666</color>
+    <color name="primaryDarkColor">#1976D2</color>
 </resources>
