@@ -1,18 +1,14 @@
 package com.example.lab4_frameworkmobile.ui.userdata
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import android.widget.SeekBar
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.lab4_frameworkmobile.R
 import com.example.lab4_frameworkmobile.data.database.entities.UserEntity
 import com.example.lab4_frameworkmobile.databinding.FragmentUserDataBinding
 import com.example.lab4_frameworkmobile.ui.base.BaseFragment
@@ -23,9 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class UserData : BaseFragment<FragmentUserDataBinding>() {
     private val userDataViewModel: UserDataViewModel by viewModels()
     private var idUser: Int = 0
-    private var redValue = 0
-    private var greenValue = 0
-    private var blueValue = 0
 
     override fun inflateBinding() {
         binding = FragmentUserDataBinding.inflate(layoutInflater)
@@ -37,7 +30,6 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
         savedInstanceState: Bundle?
     ) {
         userData()
-        setColor()
         configEditText()
         configMapNavController()
         binding?.btnUpdate?.setOnClickListener {
@@ -72,23 +64,21 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
                 Log.d(TAG, "User found: $user")
                 binding?.etName?.setText(user.name)
                 binding?.etBirthDate?.setText(user.dateOfBirth)
-                binding?.colorImageView?.setBackgroundColor(Color.parseColor(user.color))
+                binding?.etFavouriteColor?.setText(user.color)
                 binding?.etFavoriteCity?.setText(user.favoriteCity)
                 binding?.etFavoriteNumber?.setText(user.favoriteNumber)
                 binding?.etLocation?.setText(user.currentLocation)
-                getColor(user.color)
             } else {
                 Log.e(TAG, "User not found for name: $userName")
             }
         }
-
     }
 
     private fun updateUser() {
         Log.d(TAG, "updateUser called")
         val name = binding?.etName?.text.toString()
         val dateOfBirth = binding?.etBirthDate?.text.toString()
-        val color = getColorFromImageView()
+        val color = binding?.etFavouriteColor?.text.toString()
         val favoriteCity = binding?.etFavoriteCity?.text.toString()
         val favoriteNumber = binding?.etFavoriteNumber?.text.toString()
         val currentLocation = binding?.etLocation?.text.toString()
@@ -101,65 +91,23 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
             favoriteNumber = favoriteNumber,
             currentLocation = currentLocation
         )
-
         Log.d(TAG, "Updated user details: $updatedUser")
 
-
         userDataViewModel.updateUser(updatedUser)
-    }
-
-    private fun getColor(color: String) {
-        try {
-            val userColorInt = Color.parseColor(color)
-            redValue = Color.red(userColorInt)
-            greenValue = Color.green(userColorInt)
-            blueValue = Color.blue(userColorInt)
-
-            Log.d("getColor", "Red: $redValue, Green: $greenValue, Blue: $blueValue")
-
-            binding?.seekBarR?.progress = redValue
-            binding?.seekBarG?.progress = greenValue
-            binding?.seekBarB?.progress = blueValue
-        } catch (e: Exception) {
-            Log.e("getColor", "Error getting color from ImageView background", e)
-        }
-    }
-
-    private fun setColor() {
-        binding?.seekBarR?.setOnSeekBarChangeListener(mChangeListener)
-        binding?.seekBarG?.setOnSeekBarChangeListener(mChangeListener)
-        binding?.seekBarB?.setOnSeekBarChangeListener(mChangeListener)
-    }
-
-    private val mChangeListener = object : SeekBar.OnSeekBarChangeListener {
-        override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-            when (seekBar.id) {
-                R.id.seekBarR -> redValue = progress
-                R.id.seekBarG -> greenValue = progress
-                R.id.seekBarB -> blueValue = progress
-            }
-            val color = Color.rgb(redValue, greenValue, blueValue)
-            binding?.colorImageView?.setBackgroundColor(color)
-        }
-
-        override fun onStartTrackingTouch(seekBar: SeekBar) {
-        }
-
-        override fun onStopTrackingTouch(seekBar: SeekBar) {
-
-        }
-    }
-
-    private fun getColorFromImageView(): String {
-        val colorDrawable = binding?.colorImageView?.background as ColorDrawable
-        val colorInt = colorDrawable.color
-        return String.format("#%06X", 0xFFFFFF and colorInt)
     }
 
     private fun configEditText() {
         binding?.etName?.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 binding?.etName?.clearFocus()
+                true
+            } else {
+                false
+            }
+        }
+        binding?.etFavouriteColor?.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                binding?.etFavouriteColor?.clearFocus()
                 true
             } else {
                 false

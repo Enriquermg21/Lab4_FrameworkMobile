@@ -1,5 +1,8 @@
 [versions]
 #Plugins
+ambilwarna = "2.0.1"
+colorpicker = "1.1.6"
+colorpickerVersion = "0.0.13"
 coreSplashscreen = "1.0.0"
 espressoCore = "3.5.1"
 junit = "1.2.0"
@@ -48,6 +51,7 @@ fragmentKtx = "1.5.6"
 
 [libraries]
 #Android
+ambilwarna = { module = "yuku.ambilwarna:ambilwarna", version.ref = "ambilwarna" }
 androidxCoreKtx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidxCoreSplash = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplash" }
 androidxAppcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
@@ -63,6 +67,7 @@ androidxNavigationCompose = { group = "androidx.navigation", name = "navigation-
 androidxNavigationTesting = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxNavigation" }
 
 #Hilt
+colorpicker = { module = "com.github.duanhong169:colorpicker", version.ref = "colorpicker" }
 core-splashscreen-v100 = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 daggerHilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 daggerHiltCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
@@ -86,6 +91,7 @@ junit = { module = "androidx.test.ext:junit", version.ref = "junit" }
 
 #noinspection SimilarGradleDependency
 material-v160 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+quadflask-colorpicker = { module = "com.github.QuadFlask:colorpicker", version.ref = "colorpickerVersion" }
 room-compiler-v261 = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 room-ktx-v261 = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
 
