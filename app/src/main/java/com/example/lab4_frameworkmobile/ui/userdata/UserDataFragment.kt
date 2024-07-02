@@ -20,7 +20,7 @@ import com.example.lab4_frameworkmobile.ui.extensions.TAG
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class UserData : BaseFragment<FragmentUserDataBinding>() {
+class UserDataFragment : BaseFragment<FragmentUserDataBinding>() {
     private val userDataViewModel: UserDataViewModel by viewModels()
     private var idUser: Int = 0
     private var redValue = 0
@@ -48,21 +48,21 @@ class UserData : BaseFragment<FragmentUserDataBinding>() {
 
     private fun configNavController() {
         findNavController().navigate(
-            UserDataDirections.actionUserDataToContactsFragment()
+            UserDataFragmentDirections.actionUserDataToContactsFragment()
         )
     }
 
     private fun configMapNavController() {
         binding?.btnMapFavoriteCity?.setOnClickListener {
             findNavController().navigate(
-                UserDataDirections.actionUserDataToMapFragment()
+                UserDataFragmentDirections.actionUserDataToMapFragment()
             )
         }
     }
 
 
     private fun userData() {
-        val args: UserDataArgs by navArgs()
+        val args: UserDataFragmentArgs by navArgs()
         val userName = args.userName
         Log.d(TAG, "userData called with userName: $userName")
         userDataViewModel.loadUserByName(userName)

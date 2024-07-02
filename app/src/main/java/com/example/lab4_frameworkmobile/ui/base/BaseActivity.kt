@@ -84,9 +84,7 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
         clToolbar = findViewById(R.id.clToolbar)
         tbToolbar = findViewById(R.id.tbToolbar)
         ibToolbarBack = findViewById(R.id.ibToolbarBack)
-        ibToolbarMenu = findViewById(R.id.ibToolbarMenu)
         tvToolbarTitle = findViewById(R.id.tvToolbarTitle)
-        ibToolbarClose = findViewById(R.id.ibToolbarClose)
     }
 
     private fun setListenersClickToolbarButtons() {
@@ -99,8 +97,6 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity(), View.OnClick
     override fun onClick(view: View?) {
         when (view?.id) {
             R.id.ibToolbarBack -> clickToolbarBack()
-            R.id.ibToolbarMenu -> clickToolbarMenu()
-            R.id.ibToolbarClose -> clickToolbarClose()
         }
     }
 

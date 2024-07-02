@@ -5,9 +5,23 @@
     android:layout_height="match_parent"
     tools:context=".ui.map.MapFragment">
 
+    <!-- FragmentContainerView para el mapa -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcvMap"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <!-- FloatingActionButton (FAB) abajo a la izquierda -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blueLight15B7D0"
+        android:contentDescription="@string/addForm"
+        android:src="@drawable/id_return"
+        tools:ignore="RelativeOverlap,ImageContrastCheck" />
 </FrameLayout>

@@ -81,23 +81,29 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etFavouriteColor"
+        <ImageView
+            android:id="@+id/colorImageView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:contentDescription="@string/colorImageUserData" />
+
+        <SeekBar
+            android:id="@+id/seekBarR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
-            android:background="@drawable/edittext_background"
-            android:clickable="true"
-            android:focusable="true"
-            android:focusableInTouchMode="false"
-            android:hint="@string/user_detail_favorite_color_hint"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:padding="12dp"
-            android:textColor="@color/primaryDarkColor"
-            android:textColorHint="@color/secondaryTextColor"
-            android:textSize="18sp"
-            tools:ignore="VisualLintTextFieldSize" />
+            android:max="255" />
+
+        <SeekBar
+            android:id="@+id/seekBarG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255" />
+
+        <SeekBar
+            android:id="@+id/seekBarB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="255" />
 
         <!-- Ciudad favorita -->
         <TextView
