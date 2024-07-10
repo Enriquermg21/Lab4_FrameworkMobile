@@ -62,7 +62,9 @@
         tools:layout="@layout/fragment_map">
         <action
             android:id="@+id/action_mapFragment_to_contactsFragment"
-            app:destination="@id/contactsFragment" />
+            app:destination="@id/contactsFragment"
+            app:popUpTo="@id/contactsFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
 </navigation>

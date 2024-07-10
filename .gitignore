@@ -60,11 +60,3 @@ Thumbs.db
 
 # Java class files
 *.class
-/app/src/main/ic_launcher-playstore.png
-/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp
-/app/src/main/res/drawable/ic_launcher_background.xml
-/app/src/main/res/values/ic_launcher_background.xml
-/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp
-/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp
-/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp
-/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp
